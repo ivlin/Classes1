@@ -1,0 +1,104 @@
+\documentclass{article}
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\begin{document}
+
+Ivan Lin
+
+Dr. Michael Bender
+
+CSE150 - Honors Foundations of Computer Science Fall 2016
+
+\begin{center}
+Homework 2a
+\end{center}
+\underline{Problem 1}
+For each of the following statements about sets determine whether it is always true (also provide an
+example), or only sometimes true (also provide an example and counterexample). Please provide
+an explanation.\newline
+
+1.$A \in P(A)$
+
+Always true
+
+example: $A = \{1,2\}, P(A) = \{\{1\},\{2\},\{1,2\}\}, A \in P(A)$\newline
+
+2.$A \subseteq P(A)$
+
+Sometimes true 
+
+example - $A = \varnothing, P(A) = \{\varnothing\}, A \subseteq P(A)$
+
+counterexample - $A = \{1,2\}, P(A) = \{\{1\},\{2\}\}, A \not\subseteq P(A)$\newline
+
+3.$(|A| \leq |B|) \implies (A \subseteq B)$
+
+Sometimes true
+
+example - $A = \{1,2\}, |A| = 2, B = \{1,2,3\}, |B| = 3, |A| \leq |B|, A \subseteq B$
+
+counterexample: $A = \{1,2\}, |A| = 2, B = \{1,3,5\}, |B| = 3, |A| \leq |B|. A \not\subseteq B$\newline
+
+4.$(A \subseteq B) \implies (|A| \leq |B|)$
+
+Always true
+
+example - $A = \{1,2\}, |A| = 2, B = \{1,2,3\}, |B| = 3, A \subseteq B, |A| \leq |B|$\newline
+
+\underline{Problem 2}
+
+Find the smallest two finite sets A and B for each of the four conditions.
+
+Note: The smallest sets may not be unique
+
+1.$A \in B, A \subseteq B, and P(A) \subseteq B$
+
+$A = \varnothing, B = \{\varnothing\}$\newline
+
+2.$(\mathbb{N} \cap A) \in A, B \subset A, and P(B) \subseteq A$
+
+$A = \{\varnothing\}, B = \varnothing$\newline
+
+3.$A \subseteq (P(P(B)) - P(A)))$
+
+$A = \varnothing, B = \varnothing$\newline
+
+4.$A \supset (P(P(B)) - P(A))$
+
+$A = \{\varnothing\}, B = \varnothing$\newline
+
+\underline{Problem 3}
+Pove or disprove (by providing a counterexample) each of the following properties of binary relations:
+
+Let $S(A)$ be the symmetric closure of set A. Let $T(A)$ be the transitive closure of set A.
+
+For every binary relation $R$,
+
+1. $T(S(R)) \subseteq S(T(R))$
+
+counterexample: $R = \{(A,B)\}$ 
+
+$S(R) = \{(A,B),(B,A)\}, T(S(R)) = \{(A,B),(B,A),(A,A),(B,B)\}$
+
+$T(R) = \{(A,B)\}, S(T(R)) = \{(A,B),(B,A)\}$
+
+$T(S(R)) \not\subseteq S(T(R))$\newline
+
+2. $S(T(R)) \subseteq T(S(R))$
+
+There is no relation formed by the symmetric closure of the transitive closure of $R$ ($S(T(R))$) that cannot be formed by the trasitive closure of the symmetric closure of R ($T(S(R))$). In the case of the former, relations formed by the transitive closure are also reversed to make the closure symmetric, but simply reversing the component relations of the transitive closure will will allow for the same relations to be formed.\newline
+
+\underline{Problem 4}
+
+How many reflexive binary relations are there on $S \times S$? How are symmetric relations? Explain.
+
+Bonus: How many equivalence relations are there on $S \times S$? Explain.
+
+There are $2^{|S|}$ reflexive binary relations on $S \times S$. A reflexive relation is between an element and itself, so there can only be one for every element in $S$. $S \times S$ contains all pairs containing two elements of $S$ including an element and itself, so it should have $|S|$ reflexive pairs. The reflexive relations that can be formed from that is the power set of that, which is equal to $2^{|S|}$.
+
+There are $(|S|-1)!$ symmetric pairs in $S \times S$. A symmetric relation exists when two elements share the same relation to each other. In $S \times S$, each element will have a relation with every other element in the set and vice versa. The sum of all these reflexive pairs is $(|S| - 1)!$. This means the number of reflexive relations that can be formed from these pairs is $2^{(|S|-1)!}$.
+
+\end{document}

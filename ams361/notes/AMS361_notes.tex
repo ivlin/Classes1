@@ -1,0 +1,608 @@
+\documentclass[12 pt, oneside]{book}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{changepage}
+\usepackage[right, displaymath]{lineno}
+
+
+
+
+\begin{document}
+
+\newenvironment{mathline}{\begin{adjustwidth}{2cm}{}\begin{linenumbers*}}{\end{linenumbers*}\end{adjustwidth}}
+\newcommand{\laplace}{$\mathcal{L}$}
+
+\frontmatter
+
+\title{AMS361 - Differential Equations}
+\author{Lecturer: Dr. Yuefan Deng}
+\date{Spring 2017 Term}
+
+\maketitle
+
+\tableofcontents
+
+\chapter{Introduction}
+
+\subsection{Lecture Information}
+Class: AMS 361: Differential Equations\newline
+Lecturer: Dr. Yuefan Deng\newline
+Term: Spring 2017\newline
+Location: Earth and Space Sciences 101\newline
+Time: Tuesday, Thursday 5:30 p.m.-6:50 p.m.\newline
+
+
+\mainmatter
+
+\chapter{Introduction to Linear Equations}
+\section{Characteristics of Differential Equations}
+\begin{itemize}
+\item \underline{linear vs nonlinear} - an equation is linear if the dependent variable or its derivative is linear
+\item \underline{order of ordinary differential equations} - the order of an ordinary differential equation is the number of the highest derivative in the equation
+\item \underline{homogeneous vs inhomogeneous} - an equation is homogeneous if it can be arranged so its dependent variable terms are equal to 0
+\end{itemize}
+
+\begin{tabular}{|p{.15\linewidth}|p{.15\linewidth}|p{.35\linewidth}|p{.35\linewidth}|}
+  \hline
+  num. DV & num. IV & 1 & 2+\\
+  \hline
+  1 & &ordinary differential equation & partial differential equation\\
+  \hline
+  2 & &system of oridnary differential equations & system of partial differential equations\\
+  \hline
+\end{tabular}
+
+\chapter{First Order Equations}
+\section{Separable First Order Equations}
+Form:
+\begin{mathline}
+$y'=\frac{f(x)}{g(y)}$
+\end{mathline}
+Solution:
+\begin{mathline}
+$\frac{dy}{dx}=\frac{f(x)}{g(y)}$\newline{}
+$g(y)dy=f(x)dx$\newline{}
+$\int g(y)dy = \int f(x)dx$\newline{}
+integrate and solve for $y$  
+\end{mathline}
+
+\section{Linear First Order Equations}
+Form:
+\begin{mathline}
+$y'+P(x)y+Q(x)=0$
+\end{mathline}
+Solution Derivation:
+\begin{mathline}
+$y'+P(x)y+Q(x)=0$\newline{}
+$v(x)[y'+P(x)y+Q(x)=0]$ - multiply by some factor $v(x)$\newline{}
+$v(x)y'+v(x)P(x)y+v(x)Q(x)=0$\newline{}
+  \indent let $v'(x)=v(x)P(x)$ - this way,  $\frac{d[v(x)y(x)]}{dx}=v(x)y'+v(x)P(x)y$\newline{}
+  \indent $\frac{dv}{dx}=v(x)P(x)$\newline{}
+  \indent $\int \frac{dv}{v(x)}=\int P(x)dx$\newline{} 
+  \indent $ln(v(x))=\int P(x)dx + c$ \newline{}
+  \indent $v(x)=e^{\int P(x)dx + c}=Ae^{\int P(x)dx}$\newline{}
+$v(x)y'+v(x)P(x)y+v(x)Q(x)=0$\newline{}
+plug in $v(x)$ and solve as a first order linear differential equation
+\end{mathline}
+Solution:
+\begin{mathline}
+$y'+P(x)y+Q(x)=0$\newline{}
+let $v(x)=Ae^{\int P(x)dx}$\newline{}
+$v(x)[y'+P(x)y+Q(x)=0]$\newline{}
+$v(x)y'+v(x)P(x)y+v(x)Q(x)=0$\newline{}
+substitute and solve as a first order linear differential equation
+\end{mathline}
+
+\section{Polynomial Functions}
+Form:
+\begin{mathline}
+$y'=F(ax+by+c)$
+\end{mathline}
+Solution Derivation:
+\begin{mathline}
+$y'=F(ax+by+c)$\newline{}
+\indent let $u=ax+by+c$\newline{}
+\indent$u'=a+by'$\newline{}
+\indent$\frac{dy}{dx}=(\frac{du}{dx}-a)\frac{1}{b}$ - solve for y'\newline{}
+$y'=F(u)=\frac{u'-a}{b}$\newline{}
+\end{mathline}
+Solution:
+\begin{mathline}
+$y'=F(ax+by+c)$\newline{}
+let $u=ax+by+c$\newline{}
+$y'=F(u)=\frac{u'-a}{b}$\newline{}
+solve for $u$ as a separable first order linear differential equation\newline{}
+substitute and solve for $y$
+\end{mathline}
+
+\section{Homogeneous Differential Equations}
+Form:
+\begin{mathline}
+$y'=F(\frac{y}{x})$
+\end{mathline}
+Solution Derivation:
+\begin{mathline}
+$y'=F(\frac{y}{x})$\newline{}
+\indent let $u=\frac{y}{x}$\newline{}
+\indent $ux=y$\newline{}
+\indent $u'x+u=y'$\newline{}
+$y'=F(\frac{y}{x})=F(u)=u'x+u$\newline{}
+$F(u)-u=\frac{du}{dx}x$\newline{}
+$\frac{dx}{x}=\frac{du}{F(u)-u}$\newline{}
+$\int \frac{dx}{x}=\int \frac{du}{F(u)-u}$\newline{}
+$ln(x)=\int \frac{du}{F(u)-u}+c$\newline{}
+$x=Ae^{\int \frac{du}{F(u)-u}}$\newline{}
+solve for $u$, then substitute and solve back for $y$
+\end{mathline}
+Solution:
+\begin{mathline}
+$y'=F(\frac{y}{x})$\newline{}
+let $u=\frac{y}{x}$\newline{}
+$x=Ae^{\int \frac{du}{F(u)-u}}$\newline{}
+solve for $u$, then substitute and solve back for $y$
+\end{mathline}
+
+\section{Bernoulli Differential Equations}
+Form:
+\begin{mathline}
+$y'+P(x)y=Q(x)y^n$
+\end{mathline}
+Solution:
+\begin{mathline}
+$y'+P(x)y=Q(x)y^n$\newline{}
+$y'y^{-n}+P(x)y^{1-n}=Q(x)$\newline{}
+\indent let $u=y^{1-n}$\newline{}
+\indent $u'=(1-n)y^{-n}y'$\newline{}
+$\frac{1}{1-n}u'+P(x)u=Q(x)$
+solve for $u$ as a separable first order linear equation
+\end{mathline}
+
+\section{Ricatti Differential Equation}
+Form:
+\begin{mathline}
+$y'=A_0(x)+A_1(x)y+A_2(x)y^2$, given $y_0(x)$
+\end{mathline}
+Solution:
+\begin{mathline}
+$y_0(x)=A_0(x)+A_1(y)+A_2(x)y^2$, given $y_0(x)$\newline{}
+$y_0'=A_0(x)+A_1(x)y_0+A_2(x)y_0^2$\newline{}
+\indent the general solution will be of the form $y=y_0(x)+\frac{1}{z(x)}$\newline{}
+\indent $y^2=y_0(x)^2+2y_0(x)\frac{1}{z(x)}+\frac{1}{z(x)^2}$\newline{}
+\indent $y'=y_0'(x)-\frac{1}{z(x)^2}z(x)'$\newline{}
+\indent $y'=y_0'(x)-\frac{1}{z^2}z'=A_0(x)+A_1(x)(y_0+\frac{1}{z})+A_2(x)(y_0^2+2y_0\frac{1}{z}+\frac{1}{z^2}$\newline{}
+\indent $y_0'=A_0(x)+A_1(x)y_0+A_2(x)y_0^2$ - subtract
+\indent $-\frac{1}{z^2}z'=A_1(x)\frac{1}{z}+A_2(x)\frac{2y_0}{z}+\frac{A_2(x)}{z^2}$\newline{}
+\indent $z'=-A_1(x)z(x)-A_2(x)2y_0(x)z(x)-A_2(x)$\newline{}
+\indent $z'=(-A_1-2A_2y_0)z(x)-A_2(x)$\newline{}
+solve as a first order linear differential equation
+\end{mathline}
+
+\section{Exact Differential Equations}
+Form:
+\begin{mathline}
+$M(x,y)dx + N(x,y)dy = 0$\newline{}
+  the equation is exact if $\frac{M(x,y)}{\delta y}=\frac{N(x,y)}{\delta x}$
+\end{mathline}
+Solution:\newline{}
+\indent if the equation is not exact, multiply it by a factor $\rho$
+\begin{mathline}
+  $\rho[M(x,y)dx + N(x,y)dy = 0]$\newline{}
+  $\rho(x) M(x,y) = \rho(x) N(x,y)$ or $\rho(y) M(x,y) = \rho(y) N(x,y)$\newline{}  
+  $\frac{d (\rho M(x,y))}{dy} = \frac{d(\rho N(x,y))}{dx}$\newline{}
+  $\rho(x) M_y = \rho'(x)N +\rho(x)N_x$ or $\rho'(y)M + \rho(y)M_y = \rho(y) N_x$\newline{}
+  $\rho(x)[M_y-N_x]=\rho'(x)N$ or $\rho(y)[M_y-N_x]=-\rho'(y)M$\newline{}
+  $\rho(x)\frac{M_y-N_x}{N}=\frac{d\rho}{dx}$ or $\rho(y)\frac{M_y-N_x}{M}=-\frac{d\rho}{dy}$\newline{}
+  $\int \frac{M_y-N_x}{N} dx = \int \frac{d\rho}{\rho(x)}$ or $\int \frac{M_y-N_x}{M} = \int -\frac{d\rho(y)}{dy}$\newline{}
+  $\rho=e^{\int\frac{M_y-N_x}{N}dx}$ or $\rho=e^{\int\frac{N_x-M_y}{M}dy}$
+\end{mathline}
+\indent \indent if the equation is exact:
+\begin{mathline}
+  $F_1=\int M(x,y)dx$\newline{}
+  $F_1(x,y)+g(y)$\newline{}
+  $F_2=\int N(x,y) dy$\newline{}
+  $F_2(x,y)+h(x)$\newline{}
+  combine $F_1$ and $F_2$ to yield $f(x)$
+\end{mathline}
+
+\chapter{Mathematical Models}
+
+\section{Newton's Equation of Cooling}
+
+Newton's Law of Cooling formula is used to calculate the temperature of an object as it loses heat as a function of its original body temperature, the environmental temperature, and time.
+
+Form:
+\begin{mathline}
+  $\frac{dT}{dt}=k(A-T)$\newline{}
+  $T(t=0)=T_0$
+\end{mathline}
+
+Variables:
+\begin{mathline}
+  $T$ = temperature of the body\newline{}
+  $A$ = temperature of the environment\newline{}
+  $k$ = thermal conductivity\newline{}
+  $t$ = time
+\end{mathline}
+
+\section{Toricelli's Draining Equation}
+Toricelli's law relates the speed of fluid exiting from an opening in a container with the height of the fluid above the opening.
+
+Form:
+\begin{mathline}
+  $\frac{dV}{dt}=\frac{A(y)dy}{dt}=-k\sqrt{g}$\newline{}
+  $y(t=0)=y_0$
+\end{mathline}
+
+Variables:
+\begin{mathline}
+$V$ = volume of fluid in the container\newline{}
+$A$ = area of the upper surface of the fluid in the container\newline{} 
+$y$ = height of fluid over the opening\newline{}
+$k$ = constant based on viscosity of water, other variables\newline{}
+$g$ = constant of accelereation due to gravity
+\end{mathline}
+
+\section{Population Differential Equation}
+This is the logistic model of the population growth model equation.
+
+Form:
+\begin{mathline}
+  $\frac{dP}{dt}=kP(M-P)=kMP-kP^2$\newline{}
+  $P(t=0)=P_0$
+\end{mathline}
+
+Variables:
+\begin{mathline}
+  $P$ = population\newline{}
+  $M$ = carrying capacity\newline{}
+  $k$ = rate of growth\newline{}
+  $t$ = time
+\end{mathline}
+
+\section{Rocket Differential Equation}
+This model is used to find the velocity of a rocket fired in into the atmosphere, taking into account air resistance. This equation can be modified to suit any scenario that involves applying external forces to a moving mass.
+
+Form:
+\begin{mathline}
+  $m\frac{dv}{dt}=-mg-kv$\newline{}
+  $v(t=0)=v_0$
+\end{mathline}
+
+Variables:
+\begin{mathline}
+  $v$ = velocity of the rocket \newline{}
+  $m$ = mass of the rocket\newline{}
+  $g$ = acceleration due to gravity\newline{}
+  $k$ = drag/air resistant coefficient\newline{}
+  $t$ = time
+\end{mathline}
+  
+\section{Finance Differential Equation}
+This equation is used to model interest.
+
+Form:
+\begin{mathline}
+  $\frac{dz}{dt} = zr-w$\newline{}
+  $z(t=0)=z_0$
+\end{mathline}
+
+Variables:
+\begin{mathline}
+  $z$ = initial investment\newline{}
+  $r$ = interest rate\newline{}
+  $w$ = payments\newline{}
+  $t$ = time
+\end{mathline}
+
+\section{Swimmer's Problem}
+This equation is used to model a swimmer trying to cross a river with a current.
+
+Form:
+\begin{mathline}
+  $v_w(x)=\frac{dy}{dx}=\frac{v_c}{v_s}(1-(\frac{x}{a})^2)$
+\end{mathline}
+
+Variables:
+\begin{mathline}
+  $v_c$ = velocity of the current (perpendicular to swimmer)\newline{}
+  $v_s$ = velocity of the swimmer (perpendicular to current)\newline{}
+  $y$ = distance from the shortest path across from the start position(parallel to current)\newline{}
+  $x$ = position along shortest path between shores (perpendicular to current)\newline{}
+  $a$ = half the distance of the distance between shores
+\end{mathline}
+
+\section{Plane Landing Equation}
+This equation is used model the landing of a plane through perpendicular winds, assuming the plane continually adjusts its angle to face the destination
+
+Form:
+\begin{mathline}
+  $y=\frac{x}{2}[(\frac{x}{a})^{-\alpha}-(\frac{x}{a})^{\alpha}]$\newline{}
+  $\frac{dy}{dx}=\frac{y}{x}-\frac{W}{v_0}\sqrt{1+\frac{y^2}{x^2}}$\newline{}
+  $\frac{y}{x}+\sqrt{1+\frac{y^2}{x^2}}=(\frac{x}{a})^{-\alpha}$\newline{}
+  $\alpha = \frac{W}{v_0}$
+\end{mathline}
+
+Variables:
+\begin{mathline}
+  $a$ = distance at which descent begins\newline{}
+  $w$ = wind (perpendicular to plane's route)\newline{}
+  $v_0$ = plane's velocity
+\end{mathline}
+  
+\chapter{Higher Order Differential Equations}
+
+\section{General Overview of Higher Order Differentials}
+Higher order differential equations of the second degree follow the form:\newline{}
+
+\begin{mathline}
+  $a_2(x)y''+a_1(x)y'+a_0(x)y=f(x)$
+\end{mathline}
+
+\begin{tabular}{|p{.1\linewidth}|p{.1\linewidth}|p{.4\linewidth}|p{.4\linewidth}|}
+  \hline
+  $f(x)$ & $a_i(x)$ & constant & variable\\
+  \hline
+  $0$ & & characteristic equation method & cauchy-euler \\
+  \hline
+  $\neq 0$ & & method of undetermined coefficients or variation of parameters & variation of parameters\\
+  \hline
+\end{tabular}
+
+\section{Homogeneous Linear Differential Equations}
+This is the characteristic equation method, where one side consisting of all dependent variable terms and their derivatives is converted to a simple polynomial equation in terms of $\lambda$
+
+Form:\newline{}
+\begin{mathline}
+$a_ny^{(n)}+a_{n-1}y^{(n-1)}+...+a_1y^{(1)}+a_0y=0$\newline{}
+make substitution $y=e^{\lambda x}$ -> this is the only way a derivative will not go to zero due to falling order or produce a coefficient with $x$\newline{}
+$a_{n}\lambda^{n}e^{\lambda x}+a_{n-1}\lambda^{n-1}e^{\lambda x}+...+a_{1}\lambda e^{\lambda x}+a_0+e^{\lambda x}=0$\newline{}
+$e^{\lambda x}(a_{n}\lambda^{n}+a_{n-1}\lambda^{n-1}+...+a_{1}\lambda +a_0)=0$\newline{}
+$e^{\lambda x}\neq 0$\newline{}
+$a_{n}\lambda^{n}+a_{n-1}\lambda^{n-1}+...+a_{1}\lambda+a_0=0$\newline{}
+solve for $\lambda$ and substitute to solve for $y$\newline{}
+$y_{GS}=c_0y_0+c_1y_1+...+c_{n-1}y_{n-1}+c_{n}y_n$
+\end{mathline}
+\subsection{Addressing Duplicates}
+When solving the characteristic equation, there is a possibility that there can be duplicate values for $\lambda$ and $y$. In the case that there is more than one solution of $y_i=e^{cx}$, multiply duplicate solutions by the independent variable, in this case $x$, to produce a solution that is linearly independent from the others. The reasoning behind this is that $\frac{d(xe^{cx})}{dx}=e^{cx}+xe^cx$, so the extra terms get absorbed into lower derivative values.
+
+\section{Euler-Cauchy Linear Differential Equations}
+Form:\newline{}
+\begin{mathline}
+$x^{n}y^{(n)}+x^{n-1}y^{(n-1)}+...+xy^(1)+y=0$\newline{}
+\indent let $y=x^\lambda$ -> when multiplied with the coefficients, will produce terms all of the same order\newline{}
+$x^{n}(x^\lambda)^{(n)}+x^{n-1}(x^\lambda)^{(n-1)}+...+(x^\lambda)y^(1)+(x^\lambda)=0$\newline{}
+$x^{n}[(\lambda)(\lambda-1)...(\lambda-n)]x^{(\lambda-n)}+...+x\lambda x^{\lambda-1}+x^\lambda=0$\newline{}
+$x^{n}[(\lambda)(\lambda-1)...(\lambda-n)+...+\lambda+1]=0$\newline{}
+$x^\lambda\neq 0$\newline{}
+$(\lambda)(\lambda-1)...(\lambda-n)+...+\lambda+1=0$\newline{}
+solve for $\lambda$ and substitute to solve for $y$
+\end{mathline}
+
+\subsection{Addressing Duplicates}
+In the case of duplicate solutions for $y_i=x^\lambda$, multiply solutions by $ln(x)$ until all solutions are of the form $y_i=ln(x)^{c}x^\lambda$ and linearly independent.
+
+\section{Inhomogeneous Differential Equations}
+
+\subsection{Finding a Particular Solution}
+
+Theorem: The general solution to an inhomogeneous differential equation is the sum of the characteristic equation of the dependant terms and a particular solution to the equation.
+
+$y_{GS}(x)=y_c(x)+y_p(x)$
+
+For any extra terms not included in the characteristic equation, one can find a trial solution by setting a $y$ value to all extra terms with variable coefficients. Polynomial terms must be reduced as well.
+
+\subsection{Reduction of Order}
+
+Given an higher order linear differential equation, $a_2xy''+a_1xy'+a_0xy=0$ and a particular solution $y_1(x)$, we can get a second solution.
+
+$y=u(x)y_1$\newline{}
+$y'=u(x)y_1'+u'(x)y_1$\newline{}
+$y''=u(x)y_1''+2u'(x)y_1'+u''(x)y_1$\newline{}
+$ln(u)=-\int a_1+2\frac{y_1'}{y+1} dx + c_0$\newline{}
+$u(x)=c_1\int e^{-\int a_1+2\frac{y_1'}{y+1} dx}+c_2$\newline{}
+$y=u(x)y_1(x)=y_1[c_1\int e^{-\int a_1+2\frac{y_1'}{y+1} dx}+c_2]$
+
+\subsection{Variational Principle Method}
+
+Given an equation $y''+P(x)y'+Q(x)y=f(x)$
+
+The solution of a higher order differential equation requires two solutions, $y_1(x)$, $y_2(x)$
+
+Propose a particular solution:
+
+\begin{mathline}
+  $y_p(x)=u_1y_1+u_2y_2$
+  $y_p'(x)=u_1'y_1+u_1y_1'+u_2'y_2+u_2y_2'$
+  \indent assume $u_1'y_1+u_2'y_2=0$
+  $y_p'(x)=u_1y_1'+u_2y_2'$
+  $y_p''(x)=u_1'y_1'+u_1y_1''+u_2'y_2'+u_2y_2''$
+  plug into the original equation
+  $ u_1'y_1'+u_1y_1''+u_2'y_2'+u_2y_2'' + P(x)(u_1y_1'+u_2y_2') + Q(x)(u_1y_1+u_2y_2)=f(x)$
+  $(u_1'y_1'+u_2'y_2')+u_1(y_1''+P(x)y_1'+Q(x)y_1)+u_2(y_2''+P(x)y_2'+Q(x)y_2)=f(x)$
+  $(u_1'y_1'+u_2'y_2')+u_1x(0)+u_2x(0)=f(x)$
+  $u_1'y_1'+u_2'y_2'=f(x)$
+  $u_1'y_1+u_2'y_2=0$ was an earlier assumption
+  $u_1'=\frac{y_2f(x)}{y_1y_2'-y_2y_1'}$ - solve the system for $u_1'$
+  $u_2'=\frac{y_1f(x)}{y_1y_2'-y_2y_1'}$ - solve the system for $u_2'$
+  let $W(y_1,y_2)=y_1y_2'-y_2y_1'\neq 0$
+  $u_1=-\int\frac{y_2f(x)}{W(y_1,y_2)}dx$, $u_2=\int\frac{y_1f(x)}{W(y_1,y_2)}dx$
+  $y_p(x)=y_1u_1+y_2u_2=y_1[-\int\frac{y_2f(x)}{W(y_1,y_2)}dx]+y_2[\int\frac{y_1f(x)}{W(y_1,y_2)}dx]$
+  Wronskian: $W(y_1,y_2)=y_1y_2'-y_2y_1'\neq 0$
+  
+\end{mathline}
+
+\chapter{Systems of Differential Equations}
+
+\section{General Overview}
+
+Systems of differential equations are systems of equations involving differentials. Listed here are three of many possible ways of solving a system.
+
+\begin{itemize}
+\item Substitution Method
+\item Operator Method
+\item Eigen Method
+\end{itemize}
+
+\section{Substitution Method}
+
+Given:
+
+$x'=ax+by+c$
+$y'=dx+ey+f$
+
+\begin{itemize}
+\item Separate the variables in one of the equations.
+\item Take the derivative of both sides.
+\item Substitute into the other equation.
+\item Solve the equation as a second order linear differential equation.
+\end{itemize}
+
+\section{Operator Method}
+
+Given:
+
+$x'=ax+by+c$
+$y'=dx+ey+f$
+
+\begin{itemize}
+\item Let $D=\frac{d}{dt}$ and substitute into both equations
+\item Bring all terms to one side
+\item Factor out the dependent variables
+\item Solve like a regular systems of equations
+\end{itemize}
+
+\section{Eigen Method}
+
+Just like any systems of equations, a systems of differential equations can be represented in matrix form.
+
+$\begin{pmatrix}
+  x_0'\\
+  x_1'\\
+  .\\
+  .\\
+  .\\
+  x_n'
+\end{pmatrix}
+=
+\begin{pmatrix}
+  a_0+a_1+...+a_n\\
+  b_0+a_1+...+a_n\\
+  ...\\
+  ...\\
+  ...\\
+  ...
+\end{pmatrix}
+\begin{pmatrix}
+  x_0\\
+  x_1\\
+  .\\
+  .\\
+  .\\
+  x_n
+\end{pmatrix}$
+\newline{}
+
+To find the characteristic equation of the system, find the kernel of the primary coefficient matrix.
+
+$X_c(t):$
+$det(A-\lambda)=0$
+$\begin{vmatrix}
+  A_{0,0}-\lambda & A_{0,1} \\
+  A_{1,0} & A_{1,1}-\lambda \\
+\end{vmatrix}=0$
+solve for $\lambda$
+for each $\lambda$, plug it back into the matrix to find the eigenvectors
+$\begin{pmatrix}
+  A_{0,0}-\lambda_0 & A_{0,1} \\
+  A_{1,0} & A_{1,1}-\lambda_0 \\
+  \end{pmatrix}\vec{v_0}=0$
+
+$X_p(t):$
+solve for the remaining terms as you would in the method of undetermined coefficients
+
+\chapter{Laplace Transforms}
+Definition:\newline{}
+\laplace $\{f(t)\} =\int_0^\infty f(t)e^{-st}dt$
+\section{Common Laplace Transform Forms}
+Properties and Theorems of Laplace Transformations\newline{}
+\begin{tabular}{|p{.35\linewidth}|p{.25\linewidth}|p{.4\linewidth}|}
+  \hline
+  Property/Theorem & t-space & S-space \\
+  \hline
+  Linearity & $af(t)+bf(t)$ & $aF(s)+bF(s)$ \\
+  \hline
+  Periodic Function & $f(t)=f(t+T)$ & $\frac{1}{1-e^{-Ts}}\int^T_0e^{-st}f(t)dt$\\
+  \hline
+  Unit Step Function & $u(t-\alpha)$ & $\frac{1}{s}e^{-\alpha s}$\\
+  \hline
+  Exponential Function & $e^{\alpha t}$ & $\frac{1}{s-\alpha}$ \\
+  \hline
+  Trig - cosine & $cos(\omega t)$ & $\frac{s}{s^2+\omega^2}$\\
+  \hline
+  Trig - sine & $sin(\omega t)$ & $\frac{\omega}{s^2+\omega^2}$\\
+  \hline
+  Polynomial Case 0  & $f(t)=1$ & $\frac{1}{s}$ \\ 
+  \hline
+  Polynomial Case 1 & $f(t)=t$ & $\frac{1}{s^2}$ \\
+  \hline
+  Polynomial Case n & $f(t)=t^n$ & $\frac{n!}{s^{n+1}}$ \\
+  \hline  
+  Deg. 1 Variable Coefficient & $tf(t)$ & $-F'(s)$\\
+  \hline
+  Deg. n Variable Coefficient & $t^nf(t)$ & $(-1)^nF^{n}(s)$\\
+  \hline
+  Derivative & $f'(t)$ & $sF(s)-f(0)$\\
+  \hline
+  Derivative & $f^{(n)}(t)$ & $s^nF(s)-\sum^n_{k=1}s^{n-k}f^{(k-1)}(0)$ \\
+  \hline
+  Convolution & $f(t)\star g(t)$ & $F(s)G(s)$\\
+  \hline
+\end{tabular}
+
+\subsection{Convolution Theorem}
+$\star$ refers to the convolution operator, a way of combining two functions into a third. The formal definition is as follows:
+\begin{mathline}
+  $f(t)\star g(t) = \int^t_0f(\tau)g(t-\tau)d\tau$
+\end{mathline}
+
+Convolution Theorem:
+\begin{mathline}
+\laplace $[f(t)\star g(t)]=F(s)G(s)$ and \laplace$^{-1}[F(s)G(s)]=f(t)\star g(t)$
+\end{mathline}
+
+Proof of the Convolution Theorem:\newline{}
+\begin{mathline}
+let $u(t)=1$ if $t\geq 0$ and $u(t)=0$ otherwise\newline{}
+$[f(t)\star g(t)]u(t)$\newline{}
+$(\int^{\inf}_0 f(\tau)g(t-\tau)d\tau) * u(t-\tau)$\newline{}
+$\int^t_0 f(\tau)g(t-\tau)u(t-\tau)d\tau + \int^t_0 f(\tau)g(t-\tau)u(t-\tau)d\tau$\newline{}
+$\int^t_0 f(\tau)g(t-\tau)d\tau$\newline{}
+$f(t)\star g(t)= \int^{\inf}_0 f(\tau)g(t-\tau)u(t-\tau)d\tau$\newline{}
+\laplace $[f(t)\star g(t)= \int^{\inf}_0 f(\tau)g(t-\tau)u(t-\tau)d\tau]$\newline{}
+$\int^{\inf}_0\int^{\inf}_0 f(\tau)g(t-\tau)u(t-\tau)e^{-st}d\tau dt$\newline{}
+$\int^{\inf}_0f(\tau)d\tau\int^{\inf}_0 g(t-\tau)u(t-\tau)e^{-st} dt$\newline{}
+let $t=t_1+\tau$, $dt=dt_1$\newline{}
+$\int^{\inf}_0f(\tau)d\tau\int^{\inf}_0 g(t_1)u(t_1)e^{-s(t_1+\tau)} dt_1$\newline{}
+$\int^{\inf}_0f(\tau)e^{-s\tau}d\tau\int^{\inf}_0 g(t_1)u(t_1)e^{-st_1} dt_1$\newline{}
+let $F(s)=\int^{\inf}_0f(\tau)e^{-s\tau}d\tau$, $G(s)=\int^{\inf}_0 g(t_1)u(t_1)e^{-st_1} dt_1$\newline{}
+\laplace$[f(t)\star g(t)]=F(s)G(s)$
+\end{mathline}
+
+Properties of Convolutions
+\begin{itemize}
+\item commutative
+\item associative
+\item distributive
+\end{itemize}
+
+\section{Complex Inverses}
+More complex inverses can be solved three ways:
+
+\begin{itemize}
+\item Separate an inverse using a convolution, solve the components separately, and plug the values into the convolution
+\item Partial fraction decomposition into separate terms and solve individually
+\end{itemize}
+
+\end{document}

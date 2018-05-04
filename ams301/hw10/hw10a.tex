@@ -1,0 +1,80 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\begin{document}
+
+
+Ivan Lin\newline{}
+Dr. Esther Arkin\newline{}
+AMS301\newline{}
+4/14/17
+
+\begin{center}
+  Homework 10a
+\end{center}
+
+\underline{Section 7.1 Problem 6}\newline{}
+
+a. Find the recurrence relation for the number of n-digit binary sequences wiht no pair of consecutive 1s. \newline{}
+
+Base case: $n=1$, there are $2$ sequences (0, 1)\newline{}
+
+Case $n=2$: If the first digit was 0, it can be followed by either 0 or 1. If the first digit was a 1, it must be followed by 0. There are $3$ sequences. (00,01,10)\newline{}
+
+Case $n=3$: If the second digit was a 0, it can be followed by either a 0 or 1. If the second digit was a 1, it must be followed by 0. There are $5$ sequences. (000,001,010,100,101)\newline{}
+
+Case $n$: If the $n-1$ digit was a 0, it can be followed by either a 0 or 1. If the second digit was a 1, it must be followed by 0.\newline{}
+This means that in the case where an $n-1$ sequence ends in a 1, it corresponds to only one binary sequence with $n$ digits. In the case where the $n-1$ sequence ends in a 0, it corresponds to two binary sequences with $n$ digits. This means for a case $n$, the number of valid sequences is equal to the number of valid sequences for $n-1$ plus the number of sequences in $n-1$ that end in 0. Since an $n-1$ digit sequence ending in either $0$ or $1$ will each generate one $n$ digit sequence ending in $0$, this means that the number of sequences ending in $0$ will be equal to $n-1$ \newline{}
+
+Recurrence Relation: There are $a_n=a_{n-1}+(n-1)$ sequences. $a_1=2$.\newline{}
+
+b. Repeat for n-digit ternary sequences \newline{}
+
+Base case: $n=1$, there are $3$ sequences (0, 1, 2)\newline{}
+
+Case $n=2$: If the first digit was 0 or 2, it can be followed by any of the three digits. If the first digit was a 1, it must be followed by one of two digits not 1. There are $8$ sequences. (00,01,02,10,12,20,21,22)\newline{}
+
+Case $n=3$: If the second digit was 0 or 2, it can be followed by any of the three digits. If the second digit was a 1, it must be followed by one of two digits not 1. There are $22$ sequences. (000,001,002,010,012,020,021,022,100,101,102,120,121,122,200,201,202,210,212,220,221,222)\newline{}
+  
+  Case $n$: If the $n-1$ digit was a 0 or 2, it can be followed by one of three digits. If the second digit was a 1, it must be followed by one of two digits not 1.\newline{}
+  This means that in the case where an $n-1$ sequence ends in a 0 or 2, it corresponds to three binary sequence with $n$ digits. In the case where the $n-1$ sequence ends in a 0, it corresponds to two binary sequences with $n$ digits. This means for a case $n$, the number of valid sequences is equal to three times the number of sequences in $n-1$ ending in 0 and 2 plus two times the number of sequences in $n-1$ ending in 1. This means as $n$ the number of digits increases, the increase in the number of digits ending in 0 or 2 each increases by $n$ as well.\newline{}
+
+Recurrence Relation: There are $a_n=2*a_{n-1}+2(n-1)$ or $a_n=3*a_{n-1}-(n-1)$ sequences. $a_1=3$.\newline{}
+
+
+\underline{Section 7.1 Problem 18}\newline{}
+
+Find a recurrence relation for the number of $n$-letter sequences using the letters A, B, C such that any A not in the last position of the sequence is always followed by B.\newline{}
+
+Base Case: $n=1$, $a_1=3$, $\{A,B,C\}$\newline{}
+
+Case $n=2$: $a_2=7$, $\{AB,BA,BB,BC,CA,CB,CC\}$\newline{}
+
+Case $n=3$: $a_3=17$, $\{ABA,ABB,ABC,BAB,BBA,BBB,BBC,BCA,BCB,BCC,CAB,CBA,CBB,CBC,CCA,CCB,CCC\}$\newline{}
+
+Case $n$: If the $n-1$ letter in the $n-1$ letter sequence is an A, it corresponds to one $n$ letter sequence with the first $n-1$ letters followed by a B. If it does not end in B, it yields three $n$ letter sequences since it can be followed by any of the three letters. There are $a_{n-2}$ cases where term in $n-1$ ends in B and $a_{n-1}-a_{n-2}$ cases where it ends in either an A or C. This means that for $n$, there are $\frac{a_{n-1}-a_{n-2}}{2}$ A's and the same amount of C's since each are generated using the same restrictions. The number of sequences with $n-1$ characters ending in A is $\frac{a_{n-1}-a_{n-2}}{2}$. Each of these correspond to sequences in $n$ ending in B. The number of sequences in $n-1$ ending in C is the same. Each of these correspond to three sequences in $n$. The number of sequences in $n-1$ ending in B is $a_{n-2}$. Each of these also corresponds to three sequences in $n$.\newline{}
+
+$a_n= \frac{a_{n-1}-a_{n-2}}{2}+3*\frac{a_{n-1}-a_{n-2}}{2}+3*(a_{n-2})=2a_{n-1}+a_{n-2}$\newline{}
+$a_1=3$
+
+
+\underline{Problem A}\newline{}
+
+Problem A: A computer virus is spread by way of e-mail messages, and is planted in 3 machines the first day. Each day, each infected machine from the day before infects 5 new machines. Let $a_n$ be the total number of machines that are infected (have this virus) on the nth day.\newline{}
+
+(a). Write a recurrence for $a_n$. Do not forget the complete set of initial conditions! (You do not have to solve the recurrence.)\newline{}
+
+$a_1=3$\newline{}
+$a_n=a_{n-1}+5a_{n-1}=6a_{n-1}$\newline{}
+
+(b). Now suppose that on the second day a software solution is found to counteract the virus, and one machine is cleaned on this (the second) day. Each day thereafter, twice as many machines are cleaned as were cleaned the day before. Write a recurrence for an. Do not forget the complete set of initial conditions! (You do not have to solve the recurrence.)\newline{}
+
+$a_1=3$\newline{}
+$a_n=6(a_{n-1}-2^{n-2})$\newline{}
+
+Reasoning: Twice as many are cleaned each day. Starting with 1, each progressive day has multiplies the existing amount by two to get the amount cleaned. By the ith day there will be i 2s multiplied together, which is $2^i$.\newline{}
+
+\end{document}

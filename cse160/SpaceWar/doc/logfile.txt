@@ -1,0 +1,43 @@
+Class documentation
+<---- javadoc command: ---->
+/usr/lib/jvm/java-7-openjdk-amd64/bin/javadoc
+-author
+-version
+-nodeprecated
+-package
+-noindex
+-notree
+-nohelp
+-nonavbar
+-source
+1.7
+-classpath
+/usr/share/bluej/bluejcore.jar:/usr/share/bluej/junit-4.8.2.jar:/usr/share/bluej/userlib/pi4j-core.jar:/usr/share/bluej/userlib/pi4j-gpio-extension.jar:/usr/share/bluej/userlib/pi4j-device.jar:/usr/share/bluej/userlib/pi4j-service.jar:/tmp/SpaceWar
+-d
+/tmp/SpaceWar/doc
+-encoding
+UTF-8
+-charset
+UTF-8
+-docletpath
+/usr/share/bluej/bjdoclet.jar
+-doclet
+bluej.doclet.doclets.formats.html.HtmlDoclet
+/tmp/SpaceWar/liveobject/LiveObject.java
+<---- end of javadoc command ---->
+Loading source file /tmp/SpaceWar/liveobject/LiveObject.java...
+Constructing Javadoc information...
+Standard Doclet version 1.7.0_79
+Building tree for all the packages and classes...
+Generating /tmp/SpaceWar/doc/liveobject/LiveObject.html...
+/tmp/SpaceWar/liveobject/LiveObject.java:145: warning - @param argument "vel" is not a parameter name.
+Generating /tmp/SpaceWar/doc/liveobject/package-frame.html...
+Generating /tmp/SpaceWar/doc/liveobject/package-summary.html...
+Generating /tmp/SpaceWar/doc/constant-values.html...
+Building index for all the packages and classes...
+Building index for all classes...
+Generating /tmp/SpaceWar/doc/allclasses-frame.html...
+Generating /tmp/SpaceWar/doc/allclasses-noframe.html...
+Generating /tmp/SpaceWar/doc/index.html...
+Generating /tmp/SpaceWar/doc/stylesheet.css...
+1 warning

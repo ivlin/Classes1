@@ -1,0 +1,68 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\begin{document}
+
+
+Ivan Lin\newline{}
+Dr. Esther Arkin\newline{}
+AMS301\newline{}
+3/22/17
+
+\begin{center}
+  Homework 7b
+\end{center}
+
+\underline{Section 5.2 Question 14}\newline{}
+(a) On a 10-question test, how many ways are there to answer exactly eight
+questions correctly?\newline{}
+There are $\frac{10!}{8!2!}$ ways of answering exactly eight questions correctly. There are $\frac{10!}{2!}$ possible ways of choosing 8 out of the 10 questions. This must be divided by $8!$ to account for the fact that the order the questions are chosen do not matter. Essentially you are picking a list of 8 questions to be correct and we divide by $8!$ since it doesnt matter what order we list the question numbers.\newline{}\newline{}
+
+(b) Repeat part (a) with the requirement that the first or second question, but
+not both, are answered correctly.
+
+There are $\frac{8!}{7!1!}*2$ ways of answering exactly eight questions correctly with the requirement that only one question between one and two must be answered. There are $\frac{8!}{7!1!}$ possible ways of choosing 7 out of the last 8 questions to be correct by the same reasoning as above. The last of the correct questions must be either one or two. Therefore, the result must be multiplied by to to account for these two choices.\newline{}\newline{}
+
+(c) Repeat part (a) in the case that three of the first five questions are answered
+correctly.
+
+There are $\frac{5!}{3!2!}$ ways of answering exactly eight questions correctly with the requirement that three of the first five questions are correct. By the same reasoning as (a) we can determine there are $\frac{5!}{3!2!}$ ways of choosing the three correct from the first five. That means the remaining correct five must come from that last five questions. The only way this is possible is for all remaining five to be correct, so the result would be the same, since we would be multiplying by the one choice we have. \newline{}\newline{}
+
+\underline{Section 5.2 Question 20}\newline{}
+Of a company’s personnel, seven work in design, 14 in manufacturing, four in
+testing, five in sales, two in accounting, and three in marketing. A committee of
+six people is to be formed to meet with upper management.\newline{}
+
+(a) In how many ways can the committee be formed if there must be exactly
+two members from the manufacturing department?\newline{}
+
+$\frac{14!}{2!12!}\frac{21!}{4!17!}$. The answer is simply the number of ways of choosing 2 members from manufacturing multiplied by the number of ways of choosing 4 members from other divisions.\newline{}
+
+(b) Lucy works in the design department and her husband Ricky works in
+marketing. In how many ways can the committee be formed if they cannot
+both be on the committee together?\newline{}
+
+$2*\frac{33!}{5!28!}+\frac{33!}{6!27!}$ The answer is the number of ways of choosing 5 members from everyone excepting Lucy and Ricky, multiplied by two to account for the two possibilities of one of them being on the committee, added to the number of ways the committee can be formed so that neither are on the committee.\newline{}
+
+(c) In how many ways can the committee be formed if there must be at least
+two members from the manufacturing department?\newline{}
+
+$\frac{14!}{2!12!}\frac{21!}{4!17!}+\frac{14!}{3!11!}\frac{21!}{3!18!}+\frac{14!}{4!10!}\frac{21!}{2!19!}+\frac{14!}{5!9!}\frac{21!}{1!20!}+\frac{14!}{6!0!}\frac{21!}{0!21!}$\newline{}
+
+\underline{Section 5.3 QUestion 30}\newline{}
+How many ways are there to pair off 10 women at a dance with 10 out of 20
+available men?\newline{}
+
+$10!*\frac{20!}{10!10!}$ ways. Given a group of 10 men and 10 women, there are 10! ways to arrange them in unique pairs. There are 20 choose 10 ways of selecting those 10 men to be paired.\newline{}
+
+\underline{Section 5.3 Question 32}
+There are three women and five men who will split up into two four-person
+teams. How many ways are there to do this so that there is (at least) one woman
+on each team?\newline{}
+
+$\frac{6!}{3!3!}$. Since there must automatically be a woman on each team, the question reduces to how to arrange one woman and five men on two teams of three. The fraction can be looked at as choosing one team of three from the six remaining people.
+
+\end{document}

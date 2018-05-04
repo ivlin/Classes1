@@ -1,0 +1,70 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\begin{document}
+
+
+Ivan Lin\newline{}
+Dr. Esther Arkin\newline{}
+AMS301\newline{}
+4/30/17
+
+\begin{center}
+  Homework 11
+\end{center}
+
+\underline{Problem A}
+
+Of 1000 applicants for a mountain-climbing trip in the Himalayas, 450 get altitude sickness, 622 ar enot in good enough shape, and 30 have allergies. An applicant qualfies if and only if this applicant does not get altitude sickness, is in good shape, and does not have allergies. If there are 111 applicants who get altitude and are not in good shape, 14 who get altitude sickness and have allergies, 18 who are not in good enough shape and have allergies, and 9 who get altitude sickness, are not in good shape enough shape, and have allergies, how many applicants qualify.\newline{}
+
+Let A=people with altitude sickness = 450\newline{}
+B=people not in good shape = 622\newline{}
+C=people with allergies = 30\newline{}
+D=$A\cup B$ = 111\newline{}
+E=$A\cup c$ = 14\newline{}
+F=$B\cup C$ = 18\newline{}
+G=$A\cup B\cup C$ = 9\newline{}
+
+$1000-(((A\cup B\cup C) - (D\cup E\cup F))\cup G)$\newline{}
+$1000-(A+B+C-D-E-F+G)$\newline{}
+$1000-(450+622+30-111-14-18+9)$\newline{}
+$1000-968$\newline{}
+$32$\newline{}
+
+
+\underline{Section 8.1 Problem 14}\newline{}
+
+How many arrangements of the letters in INVITING are there in which there in which the three Is are consecutive or the two Ns are consecutive (or both)\newline{}
+
+three I's are consecutive: $i=\frac{6!}{2!}$\newline{}
+both N's are consecutive: $n=\frac{7!}{3!}$\newline{}
+both are true:$x=5!$\newline{}
+
+any are true:$i+n-x=\frac{6!}{2!}+\frac{7!}{3!}-5!$\newline{}
+
+\underline{Section 8.2 Problem 2}
+
+How many ways are there to roll eight distinct die so all six faces appear?\newline{}
+
+three dice have the same face, all others have different faces: $\binom{6}{1}*\frac{8!}{3!}$
+two sets of two dice have the same face as each other, all others have different faces: $\binom{6}{2}*\frac{8!}{2!2!}$\newline{}
+
+$\binom{6}{1}*\frac{8!}{3!}+\binom{6}{2}*\frac{8!}{2!2!}$\newline{}
+
+\underline{Problem B}
+
+A raffle ticket has an ID that is a sequence of 12 digits. We wish to determine how many such IDs contain the each of odd digits at least once. \newline{}
+(a). Explain why the following “solution” is wrong: First place the 1, 12 ways, then place the 3, 11 ways, then place the 5, 10 ways, place the 7, 9 ways, place the 9, 8 ways, finally pick any of the 10 digits to go in any of the remaining 7 spots (order important, repeats allowed) $10^7$, giving $12 * 11 * 10 * 9 * 8 * 10^7.$ \newline{}
+
+This solution is incorrect because it double counts. For example, it would count a sequence with a 1 as the first digit and a 1 as the last digit when randomly allocating remaining positions. However, it would separately count the possibility where the last digit is chosen to be 1 and the first digit is randomly allocated to also be 1.  
+
+(b). Solve the problem correctly!\newline{}
+
+ids with at least 1 of each odd with duplicates - ids with at least 1 of each odd and 1 more + ids with at least 1 of each odd and 2 more - ... - ids with at least 1 of each odd and 7 more
+
+$\binom{12}{5} 5! 10^7 - \binom{12}{6} 6! 10^6 + \binom{12}{7} 7! 10^5 - \binom{12}{8} 8! 10^{4} + \binom{12}{9} 9! 10^{3} - \binom{12}{10} 10! 10^2 + \binom{12}{11} 11! 10^1 - \binom{12}{12} 12! 10^0$
+
+\end{document}

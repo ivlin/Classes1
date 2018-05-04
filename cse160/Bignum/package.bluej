@@ -1,0 +1,25 @@
+#BlueJ package file
+package.editor.height=397
+package.editor.width=560
+package.editor.x=93
+package.editor.y=133
+package.numDependencies=0
+package.numTargets=1
+package.showExtends=true
+package.showUses=true
+project.charset=ISO-8859-1
+readme.editor.height=700
+readme.editor.width=900
+readme.editor.x=-14
+readme.editor.y=-58
+target1.editor.height=1143
+target1.editor.width=749
+target1.editor.x=159
+target1.editor.y=-40
+target1.height=50
+target1.name=Bignum
+target1.showInterface=false
+target1.type=ClassTarget
+target1.width=80
+target1.x=200
+target1.y=190

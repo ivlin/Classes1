@@ -1,0 +1,43 @@
+Class documentation
+<---- javadoc command: ---->
+/usr/lib/jvm/java-7-openjdk-amd64/bin/javadoc
+-author
+-version
+-nodeprecated
+-package
+-noindex
+-notree
+-nohelp
+-nonavbar
+-source
+1.7
+-classpath
+/usr/share/bluej/bluejcore.jar:/usr/share/bluej/junit-4.8.2.jar:/usr/share/bluej/userlib/pi4j-core.jar:/usr/share/bluej/userlib/pi4j-gpio-extension.jar:/usr/share/bluej/userlib/pi4j-device.jar:/usr/share/bluej/userlib/pi4j-service.jar:/courses/cse160/Lectures/projects/chapter05/bouncing-balls
+-d
+/courses/cse160/Lectures/projects/chapter05/bouncing-balls/doc
+-encoding
+UTF-8
+-charset
+UTF-8
+-docletpath
+/usr/share/bluej/bjdoclet.jar
+-doclet
+bluej.doclet.doclets.formats.html.HtmlDoclet
+/courses/cse160/Lectures/projects/chapter05/bouncing-balls/Canvas.java
+<---- end of javadoc command ---->
+Loading source file /courses/cse160/Lectures/projects/chapter05/bouncing-balls/Canvas.java...
+Constructing Javadoc information...
+Standard Doclet version 1.7.0_79
+Building tree for all the packages and classes...
+Generating /courses/cse160/Lectures/projects/chapter05/bouncing-balls/doc/Canvas.html...
+/courses/cse160/Lectures/projects/chapter05/bouncing-balls/Canvas.java:51: warning - @param argument "bgClour" is not a parameter name.
+Generating /courses/cse160/Lectures/projects/chapter05/bouncing-balls/doc/package-frame.html...
+Generating /courses/cse160/Lectures/projects/chapter05/bouncing-balls/doc/package-summary.html...
+Generating /courses/cse160/Lectures/projects/chapter05/bouncing-balls/doc/constant-values.html...
+Building index for all the packages and classes...
+Building index for all classes...
+Generating /courses/cse160/Lectures/projects/chapter05/bouncing-balls/doc/allclasses-frame.html...
+Generating /courses/cse160/Lectures/projects/chapter05/bouncing-balls/doc/allclasses-noframe.html...
+Generating /courses/cse160/Lectures/projects/chapter05/bouncing-balls/doc/index.html...
+Generating /courses/cse160/Lectures/projects/chapter05/bouncing-balls/doc/stylesheet.css...
+1 warning

@@ -1,0 +1,89 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\begin{document}
+
+
+Ivan Lin\newline{}
+Dr. Esther Arkin\newline{}
+AMS301\newline{}
+4/22/17
+
+\begin{center}
+  Homework 10-b
+\end{center}
+
+\underline{Problem B}
+
+Let $a_n$ be the number of sequences of blocks that can be placed consecutively in a line of length n if each block has length either 1 or 2. (Empty spots are not allowed.)\newline{}
+
+(a). Write a recurrence for $a_n$. (You do not have to solve the recurrence.)\newline{}
+
+$a_n=a_{n-1}+a_{n-2}$\newline{}
+
+
+Reasoning: Since blocks are of size 1 or 2, a sequence of size $n$ can be formed by:
+\begin{itemize}
+  \item adding a size 1 block to a sequence of size $n-1$
+  \item adding a size 2 block to a sequence of size $n-2$
+  \item Note: adding 2 size 1 blocks would fall under the case of item 1
+\end{itemize}
+
+(b). Write a complete set of initial conditions.\newline{}
+
+$a_1=1$ (1 size 1 block)\newline{}
+$a_2=2$ (1 size 2 block or 2 size 1 blocks)\newline{}
+
+(c). Calculate $a_6$ using your recursion from (a) and initial conditions from (b).\newline{}
+
+$a_1=1$\newline{}
+$a_2=2$\newline{}
+$a_3=a_2+a_1=1+2=3$ \newline{}
+$a_4=a_3+a_2=3+2=5$ \newline{}
+$a_5=a_4+a_3=5+3=8$\newline{}
+$a_6=a_5+a_4=8+5=13$\newline{}
+
+(d). Now assume that no 2 blocks of length 1 can be placed consecutively. Write a recurrence for $a_n$. (You do not have to solve the recurrence.)\newline{}
+
+$a_n=a_{n-2}+a_{n-3}$\newline{}
+
+Reasoning:\newline{}
+
+A sequence can be made to length $n$ by adding a block of size of 2 to a sequence of size $n-2$ or adding a block of size 1 to a sequence of size $n-1$ if it ends in a size 2 block. The latter case is only possible by adding a size 2 block to a sequence of length $n-3$.\newline{}
+
+(e). Write a complete set of initial conditions for your recurrence of part (d).\newline{}
+
+$a_1=1$ (1 size 1 block)\newline{}
+$a_2=1$ (1 size 2 block)\newline{}
+$a_3=2$ (size 1 block + size 2 block, size 2 block + size 1 block)\newline{}
+
+\underline{Problem C}
+
+Solve the following recurrence relation: $a_n=4a_{\frac{n}{2}}+3n$, $a_1=1$\newline{}
+(You may assume that $n=2^m$, for some $m=0,1,2,...$)
+
+$a_n=4a_{\frac{n}{2}}+3n$, $a_1=1$\newline{}
+$c=4$, $c\neq k$, $f(n)=3n$\newline{}
+when $c\neq k, f(n)=dn, a_n=An^{log_kc}+(\frac{kd}{k-c})n$\newline{}
+$a_n=n^{log_24}+\frac{2*3}{2-4}n$\newline{}
+$a_n=n^2-3n$\newline{}
+
+\underline{Problem D}
+
+Consider the recurrence relation: $a_n=2a_{n-1}+1, a_1=1$\newline{}
+Prove that the solution to this recurrence is $a_n=2^{n}-1$\newline{}
+
+proof by induction\newline{}
+base case: $a_1=1$\newline{}
+induction hypothesis: we will prove for all $n$ that $a_n=2a_{n-1}+1=a_n=2^n-1$\newline{}
+induction step: we will assume the relation is true for $n-1$\newline{}
+$a_{n-1}=2a_{n-2}+1=2^{n-1}-1$ \newline{}
+$2a_{n-1}=4a_{n-2}+2=2^{n}-2$ - multiply by 2\newline{}
+$2a_{n-1}=2(a_{n-2}+1)=2^n-2$ - factor out\newline{}
+$2a_{n-1}=2a_{n-1}=2^n-2$ - substitute\newline{}
+$2a_{n-1}=2a_{n-1}+1=2^n-1$ - add 1\newline{}
+we have proven the base case and the induction step true, therefore by the law of induction, we have proven the proposition true
+\end{document}

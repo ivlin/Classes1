@@ -1,0 +1,268 @@
+\documentclass[12pt]{exam}
+\usepackage{lastpage}
+\setlength\parindent{0pt}
+\renewcommand{\questionlabel}{(\thequestion)}
+
+\usepackage[letterpaper,margin=1in]{geometry}
+\def\zz{{\mathbb Z}}
+\def\rr{{\mathbb R}}
+\def\qq{{\mathbb Q}}
+\def\nn{{\mathbb N}}
+\def\cc{{\mathbb C}}
+
+\newcommand{\Z}{{\mathbb Z}{}}
+\newcommand{\N}{{\mathbb N}{}}
+\newcommand{\Q}{{\mathbb Q}{}}
+\newcommand{\R}{{\mathbb R}{}}
+\newcommand{\C}{{\mathbb C}{}}
+
+\def\myline{\rule{12cm}{.01in}}
+\def\seq{{\subseteq}}
+
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{latexsym}
+\usepackage{epsfig}
+\usepackage{xspace}
+\usepackage{color}
+\usepackage{dsfont}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{wasysym}
+\usepackage{wrapfig}
+\usepackage{tikz}
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{etoolbox}
+\AtBeginEnvironment{choices}{%
+   \par\medskip\begin{minipage}{\linewidth}}
+\makeatletter
+\AtEndEnvironment{choices}{%
+   \if@correctchoice \endgroup \fi%
+   \end{minipage}}
+\makeatother
+
+\usetikzlibrary{arrows}
+
+\newcommand{\mab}[1]{{\small \sf \color{blue}{MAB: #1}}}
+
+\newcommand{\Mod}[1]{\ (\text{mod}\ #1)}
+\newcommand{\twodots}{\mathinner{\ldotp\ldotp}}
+\renewcommand{\epsilon}{\varepsilon}
+\newcommand{\litlow}[1]{\mathord{\mathcode`\-="702D\sf #1\mathcode`\-="2200}}
+\newcommand{\lit}[1]{\ensuremath{\litlow{#1}}}
+
+\newcommand{\defn}[1] {{\textit{\textbf{\myboldmath #1\/}}}}
+\newcommand{\myboldmath}{\boldmath}
+
+\newcommand{\junk}[1]{}
+
+\newtheorem{theorem}            {Theorem}
+\newtheorem{claim}[theorem]     {Claim}
+
+\newenvironment{mcquestion}[3]
+{\begin{minipage}{\linewidth}
+\question[#1][#2] #3
+\begin{choices}}
+{\end{choices}
+\end{minipage}}
+
+
+
+% Compact itemize and enumerate.  Note that they use the same counters and
+% symbols as the usual itemize and enumerate environments.
+\def\compactify{\itemsep=0pt \topsep=0pt \partopsep=0pt \parsep=0pt}
+\let\latexusecounter=\usecounter
+\newenvironment{CompactItemize}
+  {\def\usecounter{\compactify\latexusecounter}
+   \begin{itemize}}
+  {\end{itemize}\let\usecounter=\latexusecounter}
+\newenvironment{CompactEnumerate}
+  {\def\usecounter{\compactify\latexusecounter}
+   \begin{enumerate}}
+  {\end{enumerate}\let\usecounter=\latexusecounter}
+
+% Avoid line breaks before citations (\cite) and references (\ref)
+\let\latexcite=\cite
+\def\cite{\nolinebreak\latexcite}
+\let\latexref=\ref
+\def\ref{\nolinebreak\latexref}
+
+
+%%%%%%%%%%
+
+
+\newcommand{\algorithm}[1]{
+{\rm
+\begin{center}
+\begin{tabbing}
+while \= while \= while \= while \= while \= while \= while \= while \= \kill
+#1
+\end{tabbing}
+\end{center}
+}
+}
+
+\newcounter{problemctr}
+\addtocounter{problemctr}{0}
+
+% total of counters
+\newcounter{totalpoints}
+
+\newcommand{\docounters}[2]{
+    \newcounter{#1}
+    \addtocounter{#1}{#2}
+
+    % summing counters:
+    \addtocounter{totalpoints}{#2}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  problem numbers and point values
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% BEGIN ATTEMPT TO MAKE SIMPLER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% BEGIN ATTEMPT TO MAKE SIMPLER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% BEGIN ATTEMPT TO MAKE SIMPLER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% BEGIN ATTEMPT TO MAKE SIMPLER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% BEGIN ATTEMPT TO MAKE SIMPLER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% BEGIN ATTEMPT TO MAKE SIMPLER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% BEGIN ATTEMPT TO MAKE SIMPLER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% BEGIN ATTEMPT TO MAKE SIMPLER
+% How to define a new problem %NOT YET WORKING
+\newcommand{\newproblem}[5]{
+    \newcommand{#1} {
+        \newpage
+        \addtocounter{problemctr}{1}
+        \noindent
+        {\bf Problem \theproblemctr.  (#3\xspace points)}
+
+        \smallskip
+        #5
+    }
+    \addtocounter{totalpoints}{#3}
+    \newcommand{#2}{#3}
+}
+
+%% to add text later, write \latertextnow
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% END ATTEMPT TO MAKE SIMPLER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% END ATTEMPT TO MAKE SIMPLER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% END ATTEMPT TO MAKE SIMPLER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% END ATTEMPT TO MAKE SIMPLER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% END ATTEMPT TO MAKE SIMPLER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% END ATTEMPT TO MAKE SIMPLER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% END ATTEMPT TO MAKE SIMPLER
+
+
+
+ % points for signing
+\newcounter{namesign}
+\addtocounter{namesign}{2}
+\addtocounter{totalpoints}{\thenamesign}
+
+% Name, # points, time
+
+\docounters{choices}{48}
+\docounters{powersets}{18}
+\docounters{relation}{12}
+
+
+\docounters{unused}{0}
+
+
+\begin{document}
+
+{\bf
+\noindent
+CSE 150 --  Foundations of Computer Science: Honors\hfill             Midterm Exam\\
+Michael Bender\hfill      Tuesday, November 1, 2016\\
+}
+\rule{\linewidth}{.01in}
+\begin{center}
+{\bf ~~~}
+\end{center}
+\fbox{{\Huge{\bf TEST VERSION: 1}}}\\
+\medskip
+\bigskip
+
+Name: \rule{2.625in}{.01in} ID \#: \rule{2.5in}{.01in}\\[\bigskipamount]
+
+\noindent {\bf INSTRUCTIONS:}
+\begin{itemize}
+\item Unless otherwise stated, your answers should be at most $1$ or $2$ sentences (excluding work.)
+\item This is a closed book, closed notes exam.
+\item Check to see that you have \pageref{LastPage} pages including this cover and scratch pages. %!!! check num of pages and change it at the end
+\item Read all the problems before starting work.
+\item Think before you write.
+\item If you leave a question blank or write just ``I do not know,'' you get 25\% automatically.
+\item Good luck!!
+\end{itemize}
+
+Academic integrity is expected of all students at all times, whether
+in the presence or absence of members of the faculty.
+
+Understanding this, I declare that I shall not give, use, or receive
+unauthorized aid in this examination.  I have been warned that if I
+am caught cheating (either receiving or giving unauthorized aid) I
+will get a ``Q'' grade for this course, and a letter will be sent to
+the Committee on Academic Standing and Appeals (CASA) requesting
+that an academic dishonesty notation be placed on my transcript.
+Further action against me may also be taken.
+\bigskip
+
+\noindent
+Signature \footnote{No ``I dunno'' points for leaving this blank. \smiley} \rule{2.625in}{.01in}
+
+
+
+\nopagebreak
+
+
+\begin{center}
+\begin{tabular}{||c|c|c||} \hline
+Problem&Score&Maximum\\ \hline
+signature && \thenamesign \\ \hline
+1&& \thechoices\\ \hline
+2&& \thepowersets\\ \hline
+3&& \therelation\\ \hline
+Total& &\thetotalpoints\\ \hline
+\end{tabular}
+\end{center}
+
+\bigskip
+
+\input{choices}
+\input{power-sets}
+\input{relation}
+
+
+
+{\bf \begin{center}
+    \newpage 
+    Scratch Paper
+    \newpage 
+    Scratch Paper
+    \newpage 
+    Scratch Paper
+    \newpage 
+    Scratch Paper
+\end{center}}
+
+\begin{comment}
+
+
+
+\end{comment}
+
+
+
+\end{document}

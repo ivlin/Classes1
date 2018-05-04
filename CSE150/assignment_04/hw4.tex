@@ -1,0 +1,129 @@
+\documentclass{article}
+\usepackage{dsfont}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\special{papersize=8.5in,11in}
+
+\setlength{\topmargin}{-0.5in} \setlength{\textwidth}{6.5in}
+\setlength{\oddsidemargin}{0.0in} \setlength{\textheight}{9.1in}
+
+\newlength{\pagewidth}
+\setlength{\pagewidth}{6.5in} \pagestyle{empty}
+
+\usepackage{dsfont}
+\usepackage{amsmath}
+\usepackage{subfigure}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{latexsym}
+\usepackage{epsfig}
+\usepackage{setspace}
+\def\zz{{\mathbb Z}}
+\def\rr{{\mathbb R}}
+\def\qq{{\mathbb Q}}
+\def\nn{{\mathbb N}}
+\def\cc{{\mathbb C}}
+\def\ee{{\exists}}
+\def\nl{{\bigskip \pp}}
+\usepackage{verbatim}
+
+
+\def\pp{\par\noindent}
+\def\>{\Rightarrow}
+\def\hint{\bigskip \pp \bi{Hint: }}
+
+\newcommand{\bi}[1]{\textit{\textbf{#1}}}
+\def\sol{\pp \bi{Solution: }}
+
+\newcounter{problemnumber}
+\setcounter{problemnumber}{1}
+\newcommand{\prob}{\bigskip \pp \underline{Problem \theproblemnumber:} \stepcounter{problemnumber}}
+
+\newcounter{examplenumber}
+\setcounter{examplenumber}{1}
+\newcommand{\ex}{\bigskip \pp \underline{Example \theexamplenumber:} \stepcounter{examplenumber}}
+
+
+\begin{document}
+
+\begin{flushright}
+         Michael A. Bender
+\end{flushright}
+\centerline{\bf CSE 150~~Foundations of Computer Science: Honors,
+Fall 2016}
+\centerline{Assignment \#4}
+\centerline{Due Tuesday, November 29th, 2016}
+
+
+\bigskip
+
+\prob 
+\pp I have twelve books.
+\begin{itemize}
+\item In how many ways can I line them up on a single shelf? - \textit{$12!$, or $479,001,600$ ways}
+\item In how many ways can I choose seven of them and line them up on a single shelf? - \textit{$\frac{12!}{5!}$, or $3,991,680$ ways}
+\item In how many ways can I choose seven to take to school? - \textit{$\frac{12!}{5!7!}$, or $792$ ways}
+\end{itemize}
+
+\prob 
+\pp An ogre has $n$ captives to eat, one captive per day.
+\begin{enumerate}
+\item How many ways are there to make a menu for $n$ days ? - \textit{$n!$ ways}
+\item How many ways are there to pick $k$ captives to freeze them for winter season ? - \textit{$\frac{n!}{(n-k)!}$ ways}
+\item How many ways are there to buy $n$ bottles of sauce for the captives, out of $k$ kinds ? - \textit{$\frac{k!}{n!(k-n)!}$ ways}
+\end{enumerate}
+
+\prob 
+\begin {itemize}
+\item An ice-cream vendor sells eleven kinds of ice-cream. In how many different ways can I
+  buy six cones, some or even all of which could be the same
+  - \textit{$\frac{16!}{10!6!}$, or $8008$ ways}
+\item An ice-cream vendor sells six kinds of ice-cream. In how many different ways can I
+  buy eleven cones, some or even all of which could be the same
+  - \textit{$\frac{16!}{5!11!}$, or $4368$ ways}
+\end{itemize}
+
+\prob 
+\begin{itemize}
+\item There are 33 children, and they want to divide into three teams of
+  eleven. In how many different ways can this be done? 
+  - \textit{$\frac{33!}{3!11!^3}$, or $2.2754499\times 10^{13}$ ways}
+\item How many unique permutations exist for the letters in the $1980$'s band
+  ``BANANARAMA''?
+  - \textit{$\frac{10!}{5!2!}$, or $15,120$ ways}
+\end{itemize}
+
+\prob Which number is bigger: the number of six-digit integers representable
+as a product of two three-digit integers, or the number of six-digit integers not
+representable in this form?
+- There are a greater number of six digit integers not representable as the product of two three digit integers. Since there are 900 unique 3 digit integers, there exists \textit{at most} $\frac{900*900}{2}$, or $405,000$ possible unique products, some of which do not produce six digit products or produce the same product multiple times. There are 900,000 possible 6 digit integers, meaning less than half can be represented as the product of two 3 digit integers.
+
+\prob Among the number $1,2,...,10^{10}$, are there more of those containing the digit 9 in their decimal notation, or those with no 9? 
+- There are more integers in that range with a 9 then there are without. $\frac{1}{10}$ of the numbers in that range have a 9 in the $10^{9}$ place. $\frac{1}{10}$ of the remaining numbers have a 9 in the $10^8$ place. $\frac{1}{10}$ of the remaining numbers have a 9 in the $10^7$ place. $\frac{1}{10}$ of the remaining numbers have a 9 in the $10^6$ place... and so on and so forth... $\frac{1}{10}$ of the remaining numbers have a 9 in the $10^0$ (ones) place. The formula to determine the number of numbers containing 9 is $\sum_{i=0}^{9} \frac{1}{10}(\frac{9}{10})^i$, which produces a number greater than $\frac{1}{2}$.
+
+\prob  Professors and Keys
+
+\pp A group of five professors are setting a mathematics
+competition. When they go home at night, they leave their work in a
+room which has a certain number of locks on the door. Each professor
+has keys to some, but not all of the locks. In fact, any three
+professors will have enough keys between them to open the door, but
+any two professors will not have enough. What is the smallest number
+of locks needed, and how many keys will each professor have? Provide
+a proof or a clear explanation to get credit for this problem.
+
+The first claim we can make is that each professor has the same number of keys.
+
+Reasoning: Since ANY 3 professors can open the lock, each professor would have the same number of keys.
+
+The second claim we can make is that there are 3 keys for each lock.
+
+Reasoning: If there are 2 or fewer keys for a lock, a group of 3 professors can be formed who do not possess that key. In addition, since in any group of 3 professors, there exists at least one key that does not exist outside the group, there can't be 4 or more copies of the same key.
+
+The third claim we can make is that there are 10 combinations of a group of 3 professors.
+
+Reasoning: 5 choose 3 is 10.
+
+We know that for any group of 3, there exists at least 1 key not possessed by the two other professors. Based on the third claim, this means there are at least 10 distinct locks. Furthermore, based on the second claim, we can determine there are at least a total of 30 keys. Using the first claim, we can determine that each of the 5 professors would have 6 keys.
+\end{document}

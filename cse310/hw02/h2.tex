@@ -1,0 +1,72 @@
+
+\documentclass[11pt]{article}
+
+\usepackage{graphicx} \usepackage{float} \usepackage{epstopdf}
+\usepackage[shortlabels]{enumitem}
+\usepackage{diagbox}
+\renewcommand{\baselinestretch}{1.2} \setlength{\topmargin}{-0.5in}
+\setlength{\textwidth}{6.5in} \setlength{\oddsidemargin}{0.0in}
+\setlength{\textheight}{9.1in}
+
+\newlength{\pagewidth} \setlength{\pagewidth}{6.5in} \pagestyle{empty}
+
+\def\pp{\par\noindent}
+
+\begin{document}
+
+
+\centerline{CSE310 - Assignment 2}
+\centerline{Ivan Lin}
+\bigskip
+
+\newcounter{problemctr}
+
+\addtocounter{problemctr}{1}
+\bigskip
+\noindent
+$\underline{\rm Problem\ \theproblemctr}$\pp
+Consider transferring an enormous file of $L$ bytes from Host A to Host B. Assume an MSS of 536 bytes.
+\begin{enumerate}
+    \item What is the maximum value of $L$ such that the TCP sequence numbers are not exhausted? Recall that the TCP sequence number field has 4 bytes.\\
+    The maximum value of L is $2^{32}$ or roughly $4,294,967,296$ bytes. The TCP protocol indicates a packet containing or requesting the $n$th byte of a transmitting file by using $n$ as the sequence or acknowledgment number, which is bounded by the size of the header fields - 32 bytes representing an offset of up to $2^32$.
+    \item For the $L$ you obtain in (a), find how long it takes to transmit the file. Assume that a total of 66 bytes of transport, network, and data-link header are added to each segment before the resulting packet is sent out over a 155 Mbps link. Ignore flow control and congestion control so A can pump out the segments back to back and continuously.\\
+    First the number of segments $n=\frac{4,294,967,296}{536}=8012998.68657$, rounded up to $8,012,998$ segments.
+    Since there is only one data link, the transmission time will be $\frac{N*L}{R}=\frac{8,012,998*(66+536) Bytes}{155*10^3 Bps}=248.971602374$ seconds.
+\end{enumerate}
+
+\addtocounter{problemctr}{1}
+\bigskip
+\noindent
+$\underline{\rm Problem\ \theproblemctr}$\pp
+Suppose that the five measure SampleRTT values are 106 ms, 120 ms, 140 ms, 90 ms, and 115 ms. Compute the EstimatedRTT after each of these SampleRTT values is obtained, using a value of $\alpha=0.125$ and assuming that the value of EstimatedRTT was 100 ms just before the first of these five samples were obtained. Compute also the DevRTT after each sample is obtained, assuming a value of $\beta=0.25$ and assuming the value of DevRTT was 5 ms just before the first of these five samples was obtained. Last, compute the TCP TimeoutInterval after each of these samples is obtained.
+$$UpdatedEstimatedRTT=(1-\alpha)EstimatedRTT+\alpha SampleRTT$$
+$$UpdatedDevRTT=(1-\beta)DevRTT+\beta|SampRTT-EstRTT|$$
+$$TCPTimeout=EstimatedRTT+4*DevRTT$$
+\begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    EstimatedRTT & SampleRTT & UpdatedEstimatedRTT & DevRTT & UpdatedDevRTT & TCPTimeout\\
+    \hline
+    100ms & 106ms & 100.75ms & 5ms & 5.0625ms & 120ms\\
+    \hline
+    100.75ms & 120ms & 103.15625ms & 5.0625ms & 8.00781ms & 121ms\\
+    \hline
+    103.15625ms& 140ms & 107.76122ms & 8.00781ms & 14.06555ms& 135.18749ms\\
+    \hline
+    107.76122ms& 90ms & 105.54150ms & 14.06555ms & 14.43454ms & 164.02342ms\\
+    \hline
+    105.54150ms& 115ms & 106.72382ms & 14.43454ms & 12.89495ms & 163.27966ms\\
+    \hline
+    106.72382ms & & & 12.89495ms & & 158.30362ms\\
+    \hline
+\end{tabular}
+
+\addtocounter{problemctr}{1}
+\bigskip
+\noindent
+$\underline{\rm Problem\ \theproblemctr}$\pp
+Consider a router that interconnects three subnets: Subnet 1, Subnet 2, and Subnet 3. Suppose all of the interfaces in each of these three subnets are required to have the prefix 223.1.17/24. Also suppose that Subnet 1 is required to support at least 60 interfaces, Subnet 2 is to support at least 90 interfaces, and Subnet 3 is to support at least 12 interfaces. Provide three network addresses (of the form a.b.c.d/x) that satisfy these constraints.\\
+Subnet 1: 223.1.17.0/26 - IP range of 223.1.17.00[000000] or $2^6=64$ IPs containing $62$ hosts\\
+Subnet 2: 223.1.17.128/25 - IP range of 223.1.17.1[0000000] or $2^7=128$ IPs containing $126$ hosts\\
+Subnet 3: 223.1.17.64/26 - IP range of 223.1.17.01[000000] or $2^6=64$ IPs containing $62$ hosts\\
+
+\end{document}

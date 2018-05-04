@@ -1,0 +1,78 @@
+% !TEX root =  midterm.tex
+\newpage
+\addtocounter{problemctr}{1}
+
+{\bf
+Problem \theproblemctr.  (18 \xspace points)}
+For each of the following statements about sets, state whether it is always true (provide an {\bf example}), {\bf sometimes} true (provide an {\bf example} and {\bf counterexample}), or {\bf never} true (provide a {\bf counterexample}).
+
+\vspace{.2in}
+
+\begin{enumerate}[label=(\arabic*),itemsep=1.5in]
+\item
+$S \in P(P(S))$\hspace{100pt}{\bf always\hspace{10pt} sometimes\checkmark\hspace{10pt} never}
+
+{\bf Example:}          S = \underline{$\emptyset$}
+
+{\bf Counterexample:}   S = \underline{$\{1\}$}
+
+\item
+$P(S\cap T) = P(S)\cap P(T)$\hspace{100pt}{\bf always\checkmark\hspace{10pt} sometimes\hspace{10pt} never}
+
+{\bf Example:}          S = \underline{$\{1\}$}
+
+                        \hspace{100pt}T = \underline{$\{2\}$}
+
+{\bf Counterexample:}   S = \underline{}
+
+                        \hspace{100pt}T = \underline{}
+
+\item
+$P(S-T)=P(S)-P(T)$\hspace{100pt}{\bf always\hspace{10pt} sometimes\hspace{10pt} never\checkmark}
+
+{\bf Example:}          S = \underline{}
+
+                        \hspace{100pt}T = \underline{}
+
+{\bf Counterexample:}   S = \underline{$\{1\}$}
+
+                        \hspace{100pt}T = \underline{$\{1\}$}
+\end{enumerate}
+
+
+\newpage
+\addtocounter{problemctr}{1}
+
+{\bf
+Problem \theproblemctr.  (\therelation\xspace points)}
+\\
+
+Let's do some counting. Given a finite set $S$, where $\lvert S \rvert= n$, fill in the blanks below and give a {\bf one-sentence} justification for each.
+
+\vspace{.2in}
+
+\begin{enumerate}[label=(\arabic*),itemsep=1.5in]
+\item
+Total number of binary relations on $S$:
+\underline{$2^{n^2}$}
+
+\bigskip
+
+There are $n^2$ ordered binary pairs in $S\times S$ since very element in the first set is paired with every element in the second set, resulting in $n^2$ pairs, meaning there are $2^{n^2}$ possible relations containing some subset of $S\times S$. 
+\item
+Number of reflexive binary relations on $S$:
+\underline{$2^{n^2-n}$}
+
+\bigskip
+
+Since reflexive binary relations must contain all pairs $(x,x)$ where $x\in S$, there are $n$ pairs that must be in the reflexive binary relation and $n^2-n$ pairs that may optionally be in a reflexive binary relation, making the set of possible different binary relations $2^{n^2-n}$
+\item
+Number of symmetric binary relations on $S$:
+\underline{$2^{\frac{n(n+1)}{2}}$}
+
+\bigskip
+
+Since any symmetric binary relation that contains $(S_1,S_2)$ also contains $(S_2,S_1)$, the number of possible pairs that can be in a symmetric relation is equal to the number of $(S_1,S_2)$ where $S_1=S_2$ plus the half the number of pairs $(S_1,S_2)$ where $S_1\neq S_2$ (since the other half consists of ordered pairs $(S_2,S_1)$ that must also appear by necessity if its inverse appears), which in sum is equal to $\frac{n(n+1)}{2}$, meaning there are $2^{\frac{n(n+1)}{2}}$
+\end{enumerate}
+
+\newpage

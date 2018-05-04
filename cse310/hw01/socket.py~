@@ -1,0 +1,9 @@
+from socket import *
+import ssl
+
+mailserver = "smtp.gmail.com"#use gmail server
+
+clientSocket=socket(AF_INET, SOCK_STREAM)
+clientSocketSSL=ssl.wrap_socket(clientSocket)
+
+clientSocketSSL.connect()

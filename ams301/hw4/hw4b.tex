@@ -1,0 +1,43 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\begin{document}
+
+
+Ivan Lin\newline{}
+Dr. Esther Arkin\newline{}
+AMS301\newline{}
+2/17/17
+
+\begin{center}
+  Homework 4b
+\end{center}
+
+\underline{Section 2.3 Question 10}
+
+a. We will prove that in a map of $n$ intersecting circles, the regions in this graph can be 2 colored by induction on $n$.
+
+Base Case: $n=1$, with one circle, there are two regions - the outside and the circle. There are two regions, so it can be two colored.
+
+Induction Step: Assume that the regions in a map of $n$ intersecting circles can be two colored. The map can be represented by a graph with $n$ vertices where each vertex represents a region and each edge represents a border line between two regions. If a new intersecting circle is added to the map, that can be represented by at least one new vertex representing the new circle and intersecting regions. If two regions border the same region, they cannot border each other since there will always be an intersecting region where they touch. This means a triangle can not be formed and a $K_3$ subgraph is not formed, so the graph can be 2-colored. Therefore a map of $n+1$ intersecting circles can also be two colored.
+
+Since we have proven the base case and the induction step, we have proven by induction that a map of $n$ intersecting circles can be two colored.
+
+b. The graph can colored by how many circles contain it. If the graph were to be colored byhow many circles contain it, there graph would be two colored. A graph contained within an even number of circles would have one color while a graph with an odd number of circles would have another. This also can be proven by induction. The base case would be the first circle serving as a a region contained in one circle. The induction would be to assume that if the proposition were true for $n$ intersecting circles, adding a circle would create new intersecting regions. Each new region has a count one higher than the region from which it was formed. So there will always be a difference of one between adjacent regions. This means adjacent regions can't both be even or both be odd.
+
+By proving the base case and the induction step, we have proven that adjacent regions always alternate between even and odd. This means the map can be two colored if the odd regions are all colored one color and the even regions are all colored another.
+
+\underline{Section 2.3 Question 12}
+
+In this problem the vertices will represent a type of animal. An edge between two vertices represents a relationship where the animals connected by the edge can not be in the same area together. The colors represent an open area. Animals whose vertices are colored the same color will go to the same area.
+
+\underline{section 2.4 Question 2}
+
+A planar graph with 8 vertices and 13 edges cannot be 2-colored.
+
+We can prove this using Euler's formula ($regions=edges-vertices+2$). According to this formula, it can be shown that there are 7 regions. We can that there exists a triangle in this configuration by contradiction. We will assume for the sake of contradiction the graph does not contain a triangle. The first two regions must be formed with at least four vertices. Every new distinct region formed will require at least 1 new distinct vertex to the graph. As a result, in order to add 5 new regions to form 7 regions, at least 5 new vertices must be added to the existing 4 vertices for a total of 9 vertices needed for a graph with 7 regions. This is a contradiction, meaning a graph with 7 regions and 13 edges must contain at least one triangle $K_3$ region. The presence of a $K_3$ subgraph means that the subgraph must be at least 3-colored. 
+
+\end{document}

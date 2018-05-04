@@ -1,0 +1,67 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\begin{document}
+
+
+Ivan Lin\newline{}
+Dr. Esther Arkin\newline{}
+AMS301\newline{}
+3/31/17
+
+\begin{center}
+  Homework 8b
+\end{center}
+
+\underline{Section 5.4 Problem 10}\newline{}
+
+How many ways are there to arrange the 26 letters of the alphabet so that no pair
+of vowels appear consecutively (Y is considered a consonant)?
+
+$\frac{20!}{15!}*\frac{21!}{6!}$ This problem can be modeled similarly to the balls-in-boxes problem. There are six vowels, so there are seven segments, with five segments in the middle. The middle segments between the vowels must have at least one consonant, so five of the twenty consonants are already allocated. That means there are 15 unique balls, 6 dividers, and 7 boxes. All the letters are unique, the answer is multiplied by permutations of 5 letters to account for the different consonants that are automatically allocated at the start.
+
+\underline{Section 5.4 Problem 34}\newline{}
+
+State an equivalent selection version and an equivalent integer-solution-of-
+an-equation version of the following distribution problems:\newline{}
+
+(a) Distributions of 30 black chips into five distinct boxes\newline{}
+
+-Ways of choosing 30 chips from five different colors\newline{}
+-Number of unique, nonnegative, integer solutions to $x_0+x_1+x_2+x_3+x_4=30$\newline{} 
+
+(b) Distributions of 18 red balls into six distinct boxes with at least two balls in
+each box
+
+-Ways of choosing 30 fruits to buy when the supermarket offers six types and you have to buy 2 of each\newline{}
+-Number of unique, nonnegative, integer solutions to $(x_0+2)+(x_1+2)+(x_2+2)+(x_3+2)+(x_4+2)+(x_5+2)=30$\newline{}
+
+(c) Distributions of 20 markers into four distinct boxes with the same number
+of markers in the first and second boxes
+
+-Ways of choosing 20 markers to take from four offered colors when two of the colors are offered as a pack (i.e. to take one of one color would mean taking one of the other)\newline{}
+-Number of unique, nonnegative, integer solutions to the system of equations: $x_0+x_1+x_2+x_3=30$, $x_0=x_1$$\newline{}
+
+\underline{Problem B}\newline{}
+
+An ice cream parlor has 28 different flavors, 8 different kinds of sauce and 12 toppings.\newline{}
+(a). How many different ways can a dish with 3 scoops of ice cream be made, if each flavor can be used more
+than once, and the order of the scoops does not matter?\newline{}
+
+$\frac{30!}{27!3!}$ ways - modelled after boxes-and-balls problems\newline{}
+
+(b). How many different kinds of small sundaes are there is a small sundae contains one scoop a sauce and a
+topping?\newline{}
+
+$28*8*12$ kinds\newline{}
+
+(c). How many different large sundaes are there if a large sundae contains 3 scoops (flavors can be used more
+than once, the order of the scoops does not matter) two different kinds of sauce, the order of the sauce does
+not matter, and three different toppings and the order of the toppings does not matter?\newline{}
+
+$\frac{30!}{27!3!}\frac{9!}{7!2!}\frac{14!}{11!3!}$ ways\newline{}
+
+\end{document}

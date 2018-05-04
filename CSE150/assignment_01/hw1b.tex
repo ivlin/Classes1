@@ -1,0 +1,223 @@
+\documentclass{article}
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\begin{document}
+
+Ivan Lin
+
+Dr. Michael Bender
+
+CSE150 - Honors Foundations of Computer Science Fall 2016
+
+\begin{center}
+Homework 1a
+\end{center}
+\underline{Problem 1}
+Write $P\implies Q$ using $\lor$ and $\sim$. Show that your two representations are equivalent.
+\begin{center}
+$(P\implies Q)\iff (\sim P \lor Q)$
+
+\begin{tabular}{|l|l|l|l|l|}
+  \hline $P$ & $Q$ & $\sim P$ & $P\implies Q$ & $\sim P \lor Q$\\  
+  \hline T & T & F & T & T\\
+  \hline T & F & F & F & F\\
+  \hline F & T & T & T & T\\
+  \hline F & F & T & T & T\\
+  \hline
+\end{tabular}
+\end{center}
+
+\underline{Problem 2}
+Prove that the propositional formulas
+\begin{center}
+  $P\lor Q\lor R$
+\end{center}
+and
+\begin{center}
+  $(P\land\sim Q)\lor(Q\land\sim R)\lor(R\land\sim P)\lor(P\land Q\land R)$
+\end{center}
+are equivalent.
+
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
+  \hline $P$ & $Q$ & $R$ & $\sim P$ & $\sim Q$ & $\sim R$ & $P\land \sim Q$ & $Q\land \sim R$ & $R\land \sim P$ & $P\lor Q\lor R$\\
+  \hline T & T & T & F & F & F & F & F & F & T \\ 
+  \hline T & T & F & F & F & T & F & T & F & F \\
+  \hline T & F & T & F & T & F & T & F & F & F \\
+  \hline F & T & T & T & F & F & F & F & T & F \\
+  \hline T & F & F & F & T & T & T & F & F & F \\
+  \hline F & F & T & T & T & F & F & F & T & F \\
+  \hline F & T & F & T & F & T & F & T & F & F \\
+  \hline F & F & F & T & T & T & F & F & F & F \\
+  \hline
+\end{tabular}
+\begin{tabular}{|l|l|}
+  \hline $(P\land\sim Q)\lor(Q\land\sim R)\lor(R\land\sim P)\lor(P\land Q\land R)$ & $P\lor Q\lor R$\\
+  \hline T & T\\
+  \hline T & T\\
+  \hline T & T\\
+  \hline T & T\\
+  \hline T & T\\
+  \hline T & T\\
+  \hline T & T\\
+  \hline F & F\\
+  \hline
+\end{tabular}
+\end{center}
+
+
+\underline{Problem 3}
+(a) Write the biconditional ($\Leftrightarrow$) using online implies ($\implies$) and and ($\land$). Prove that the new version is equivalent.
+\begin{center}
+$(P\Leftrightarrow Q)\iff (P\implies Q)\land (Q\implies P)$
+
+  \begin{tabular}{|l|l|l|l|l|l|}
+    \hline $P$&$Q$&$P\implies Q$&$Q\implies P$&$P(\implies Q)\land (Q\implies P)$&$P\Leftrightarrow Q$\\
+    \hline T&T&T&T&T&T \\
+    \hline T&F&F&F&F&F \\
+    \hline F&T&T&T&F&F \\
+    \hline F&F&T&T&T&T \\
+    \hline
+  \end{tabular}
+\end{center}
+(b) Write it using only $\lor$ and $\sim$. Show your derivation.
+\begin{center}
+  $(P\Leftrightarrow Q)\iff (P\implies Q)\land (Q\implies P)$
+
+  given  $A\iff \sim (P\implies Q), B\iff \sim (Q\implies P)$
+
+  $(P\implies Q)\land (Q\implies P)\iff (\sim A\land \sim B)$
+
+  $(\sim A\land \sim B) \iff \sim(A\lor B)$ by De Morgan's Laws
+
+  $\sim(A\lor B)\iff \sim(\sim (P\implies Q) \lor \sim (Q\implies P))$
+  
+  since $(P\implies Q)\iff(\sim P \lor Q)$
+
+  $\sim(\sim (P\implies Q) \lor \sim (Q\implies P)) \iff \sim(\sim (\sim P \lor Q) \lor \sim (\sim Q\lor P))$
+\end{center}
+\newpage
+\begin{center}
+Homework 1b
+\end{center}
+
+\underline{Problem 4}
+Boolean algebra operations can be expressed as arithmetic operations mod 2. Let 1 represent be true and 0 false.\newline
+
+(a) Show that $A\land B = (A\cdot B mod 2)$
+
+\begin{tabular}{|l|l|l|l|}
+  \hline $A$ & $B$ & $A\land B$ & $(A\cdot B)\%2$\\
+  \hline T=1 & T=1 & T & 1=T\\
+  \hline T=1 & F=0 & F & 0=F\\
+  \hline F=0 & T=1 & F & 0=F\\
+  \hline F=0 & F=0 & F & 0=F\\
+  \hline 
+\end{tabular}\newline
+
+(b) What is $\sim A$?\newline
+
+$\sim A = (A + 1)\%2$\newline
+
+(c) What is $A \lor B\%$ (Use De Morgan's Laws.)
+\begin{center}
+let $P \iff \sim A, Q \iff \sim B$
+
+$(A \lor B) \iff (\sim P \lor \sim Q)$
+
+$(\sim P \lor \sim Q) \iff  \sim (P \land Q)$ by De Morgan's Laws
+
+replace $P, Q$
+
+$\sim(P \land Q) \iff \sim(\sim A \land \sim B)$
+\end{center}
+
+\underline{Problem 5}
+Problem 5
+Over lunch at the faculty club, n professors are expressing their concerns over their salaries. Each
+professor wants to know how his/her salary compares to the average salary of the group, but no
+professor wants to divulge any information about his/her salary to the other n − 1.\newline
+
+(a) Devise a scheme that allows the professors to compute the average of their salaries, while
+preserving their privacy.\newline
+You may assume that all the professors will adhere to the rules of the protocol, although they
+will try to extract as much information from the protocol as possible. You may also assume
+that it is public knowledge that the professors’ salaries together don’t exceed \$1 trillion.\newline
+
+The professors form a closed chain of professors. The first professor chooses a random number, $R$ from a uniform distribution between 0 and $L$, where L is a huge number that is greater than the sum of the all their salaries could reasonably be. 
+
+The first professor then adds their salary, $S_1$ to the random number. They then take the total modulo $L$ and pass the 
+result to the next professor. As a result, the theoretical expected value the next professor receives is no longer 
+$S_1+L/2$, since the modulus changes the expected value. Each professor in the chain then adds their salary to the number, modulo by $L$ and pass it on. When the last professor finishes, they pass the result ($(R+\sum_{i=1}^{n}S_i)\mod L$) back to the first professor. 
+
+The first professor simply has to subtract R from the sum total and modulo the result by L to obtain the sum total of all salaries. This works because $L$ is so large, the sum of the salaries and the random number will never be more than $2L$.The professor divides the total by $n$ to determine the average salary of the n professors. \newline
+
+(b) Now extend the protocol to be robust even when groups of professors collude. Specifically, if
+i professors collude, naturally, naturally they can learn the average salary of the remaining
+n − i. Your protocol should reveal no additional information.
+
+See next page for answer
+
+\newpage
+\textbf{Solution developed in collaboration with Andy Liang}
+
+\underline{Here is an explanation written up by me}\newline
+
+Given $n$ professors and a huge number $L$.\newline
+
+Each professor randomly chooses a random number $R$ uniformly distributed from 0 to $L$.\newline
+
+Each professor then randomly distributes $R$ into $n$ components (divided randomly, not evenly) that add up to $N$, where each component is represented by $r$.\newline
+
+Every professor receives one of these components, and this is true for each professor, so each professor eventually has their salary, $S$, and the sum of the salary components from other professors, $\sum_{i=1}^{n} r_i$.\newline
+
+The professors each take $S+\sum_{i=1}^{n} r_i$ (the sum of their salary and the sum of the components they received) together. \newline
+
+Each takes that total modulo $L$ (which obfuscates the expected value), and add them all together with that of other professors.\newline
+
+$\sum_{i=1}^{n} [(S_i + \sum_{j=1}^{n} r_{i,j})\%L] = \sum_{i=1}^{n} [(S_i + R_i)\%L$].\newline
+
+The total is equal to the sum of all salaries and all individual components, which is also equal to the sum of all salaries and all the originally chosen random numbers.\newline
+
+Each professor than subtracts their original random number, $R_i$, from the total.\newline
+
+\noindent\rule{10cm}{0.4pt}\newline
+
+\textbf{Note} Alternatively, each professor add $(S + R)\%L$ (their salary and their original random number) to the total. Each professor then subtracts $\sum_{i=1}^{n} r_i$ (the sum of the components they receive) from the sum total.\newline
+
+\noindent\rule{10cm}{0.4pt}\newline
+
+Regardless of the method, $\sum_{i=1}^n R_i = \sum_{i=1}^n \sum_{j=1}^n r_{i,j}$. The total sum of the random numbers are equal to that of the random components. However, each individual professor's random number $R$ and component sum $\sum_{i=1}^n r_i$ are different, so it is impossible to discern each professor's individual salary.\newline
+
+Once the random numbers have been subtracted and the difference has been found, the answer should first be taken modulo $L$. The output is then $\sum_{i=1}^n S_i$, which can be divided by $n$ to find the average salary of the professors.
+
+\newpage
+\underline{Here is an explanation written up by Andy (for documentation purposes)}
+
+\noindent
+\textbf{Collaborated with Ivan Lin}
+\\* Similar to part a, the professors start by agreeing on a number L that has a value much larger than one trillion. The first professor picks a random number R$_1$ between 0 and L-1 inclusive. However, instead of the first professor adding his salary to the random number, he splits it into n smaller random numbers that add up to the initial random number r$_1$ to r$_n$. He then randomly picks a number between r$_1$ to r$_n$ inclusive before distributing the rest to the other professors. After the other n-1 professors repeat the same process, each professor should have two random numbers: the random number they chose between 0 and L -1 (R$_n$) and the sum of all the random pieces they were given ($\sum_{i=1}^{n} r_{i}$). 
+The first professor then adds either R$_1$ or $\sum_{i=1}^{n} r_{i}$ to his salary (for the sake of this explanation, I'll say he uses R$_1$) and mods it by L to maintain a uniform distribution. 
+\smallskip
+\\*\centerline{Current Total = (S$_1$ + R$_1$) mod L}
+\smallskip 
+\\*Rather than telling the professor next to him, the first professor says his number aloud for all professors to hear. The next professor volunteers and then adds his salary (S$_2$) plus his random number (R$_2$) modded by L to the current total.
+\\*\centerline{Current Total = (S$_1$ + R$_1$ + S$_2$ + R$_2$) mod L}
+\smallskip
+\\*The remaining professors do the same resulting in:
+\smallskip
+\\*\centerline{Total = (Total Professor Salaries ($\sum_{i=1}^{n} S_{i}$) + Total Random Numbers ($\sum_{i=1}^{n} R_{i}$)) mod L}
+\smallskip
+\\*To figure out the total professor salaries, the professors all subtract the sum of their random pieces ($\sum_{i=1}^{n} r_{i}$) then mod by L
+\\*\centerline{$\sum_{i=1}^{n} R_{i}$ = $\sum_{i=1}^{n}\sum_{i=1}^{n} r_{i}$}
+\smallskip
+\\*\centerline{Total Professor Salaries ($\sum_{i=1}^{n} S_{i}$) = (Total - Total Random Pieces ($\sum_{i=1}^{n}\sum_{i=1}^{n} r_{i}$)) mod L}
+\smallskip
+\\*To find the average of their salaries, the professors divide their total by n.
+\smallskip
+\\*\centerline{Average Professor Salary = Total Professor Salaries / n}
+
+
+\end{document}

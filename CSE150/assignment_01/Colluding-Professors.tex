@@ -1,0 +1,32 @@
+\documentclass[12pt]{article}
+\usepackage[left=0.5in, right=0.5in, top=0.5in, bottom=0.5in]{geometry}
+\usepackage{ulem}
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+\begin{document}
+\noindent
+\textbf{Collaborated with Ivan Lin}
+\\* Similar to part a, the professors start by agreeing on a number L that has a value much larger than one trillion. The first professor picks a random number R$_1$ between 0 and L-1 inclusive. However, instead of the first professor adding his salary to the random number, he splits it into n smaller random numbers that add up to the initial random number r$_1$ to r$_n$. He then randomly picks a number between r$_1$ to r$_n$ inclusive before distributing the rest to the other professors. After the other n-1 professors repeat the same process, each professor should have two random numbers: the random number they chose between 0 and L -1 (R$_n$) and the sum of all the random pieces they were given ($\sum_{i=1}^{n} r_{i}$). 
+The first professor then adds either R$_1$ or $\sum_{i=1}^{n} r_{i}$ to his salary (for the sake of this explanation, I'll say he uses R$_1$) and mods it by L to maintain a uniform distribution. 
+\smallskip
+\\*\centerline{Current Total = (S$_1$ + R$_1$) mod L}
+\smallskip 
+\\*Rather than telling the professor next to him, the first professor says his number aloud for all professors to hear. The next professor volunteers and then adds his salary (S$_2$) plus his random number (R$_2$) modded by L to the current total.
+\\*\centerline{Current Total = (S$_1$ + R$_1$ + S$_2$ + R$_2$) mod L}
+\smallskip
+\\*The remaining professors do the same resulting in:
+\smallskip
+\\*\centerline{Total = (Total Professor Salaries ($\sum_{i=1}^{n} S_{i}$) + Total Random Numbers ($\sum_{i=1}^{n} R_{i}$)) mod L}
+\smallskip
+\\*To figure out the total professor salaries, the professors all subtract the sum of their random pieces ($\sum_{i=1}^{n} r_{i}$) then mod by L
+\\*\centerline{$\sum_{i=1}^{n} R_{i}$ = $\sum_{i=1}^{n}\sum_{i=1}^{n} r_{i}$}
+\smallskip
+\\*\centerline{Total Professor Salaries ($\sum_{i=1}^{n} S_{i}$) = (Total - Total Random Pieces ($\sum_{i=1}^{n}\sum_{i=1}^{n} r_{i}$)) mod L}
+\smallskip
+\\*To find the average of their salaries, the professors divide their total by n.
+\smallskip
+\\*\centerline{Average Professor Salary = Total Professor Salaries / n}
+\end{document}

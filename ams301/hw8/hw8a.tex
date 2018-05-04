@@ -1,0 +1,66 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\begin{document}
+
+
+Ivan Lin\newline{}
+Dr. Esther Arkin\newline{}
+AMS301\newline{}
+3/28/17
+
+\begin{center}
+  Homework 8a
+\end{center}
+
+\underline{Section 5.3 Question 22}\newline{}
+
+How many arrangements of the letters in PEPPERMILL are there with\newline{}
+
+(a) The M appearing to the left of all the vowels?\newline{}
+
+$\frac{9!6!}{6!2!2!3!}+\frac{8!6!}{5!2!2!3!}+\frac{7!6!}{4!2!2!3!}+\frac{6!6!}{3!2!2!3!}+\frac{5!6!}{2!2!2!3!}+\frac{4!6!}{4!6!2!2!3!}+\frac{3!6!}{1!2!2!3!}$\newline{}
+
+$\frac{6!}{2!2!3!}(9P3+8P3+7P3+6P3+5P3+4P3+3P3)$
+
+
+There are 10 letters in PEPPERMILL. The answer is obtained by finding the sum of of arrangements where the M is respectively in all positions from the first to the seventh. The positions of the vowels are chosen from the indices after i (hence the permutations). The remaining 6 letters are arranged in the positions not occupied by M or a vowel. The number of arrangements are then divided by any duplicates (P appears 3 times, E appears 2 times, L appears 2 times).
+
+
+(b) The first P appearing before the first L?\newline{}
+
+$\frac{4!}{2!2!}*\frac{10!}{5!5!}*\frac{5!}{2!}$. There are C(10,5) ways of choosing the positions for the 3 P's and 2 L's. The first index in the sequence is automatically designated one of the P's. There are C(4,2) ways of arranging the other 2 P's and L's. There two terms are multiplied together along with the ways of ordering the remaining 5 letters in the sequence.
+
+
+\underline{Section 5.3 Question 24}\newline{}
+
+How many arrangements of PREPOSTEROUS are there in which the five vowels
+are consecutive?
+
+$\frac{8!5!}{2!2!2!2!2!}$ arrangements. Since the five vowels must be grouped together, the vowel sequence can act as a single entity among a sequence of consonants, so there are a combined total of 8 such groups (7 consonants, 1 vowel) that must be arranged. This is multiplied by $5!$ ways of arranging the five vowels. The results are divided by the possibile ways of arranging duplicate letters (there are 2 instances of P, R, S, E, O each).
+
+\underline{Problem A}\newline{}
+
+40 identical balls are to be placed in 4 distinct boxes.\newline{}
+(a). How many different ways can the balls be placed?\newline{}
+
+$\frac{43!}{40!3!}$ ways of placing balls. This can be looked at as having 40 balls and 3 dividers splitting the balls into 4 groups. The problem is basically choosing which positions to place the dividers.\newline{}
+
+(b). How many different ways can the balls be placed if every box boxes gets at least 3 balls?\newline{}
+
+$\frac{31!}{28!3!}$ ways of placing balls. If each box is automatically allocated 3 balls, that means we only have 28 balls we are free to arrange. Without the 12 balls that have already been put into the boxes, the problem becomes have 28 balls and 3 dividers.\newline{}
+
+(c). How many different ways can the balls be placed if one of the boxes gets at most 2 balls, and the other
+boxes get at least 2 balls each?\newline{}
+
+$\frac{36!}{34!2!}+\frac{35!}{33!2!}+\frac{34!}{32!2!}$ it's the sum of the cases where one box has 0, 1, and 2 balls respectively. That means there is one less section and one less divider. Among the three remaining boxes, two balls are automatically allocated to each. So it becomes 34 balls and 2 dividers, 33 balls and 2 dividers, and 32 balls and 2 dividers.\newline{}
+
+(d). How many different ways can the balls be placed if each boxes get at least 2 balls each, but no box gets
+18 or more balls?\newline{}
+
+$\frac{35!}{32!3!}-4*\frac{19!}{16!3!}$ ways. The answer is the difference between ways of organizing boxes such that each box has at least 2 and one of the four boxes having at least 18 balls and other boxes having at least 2 balls (40-6-18=16 balls).
+
+\end{document}

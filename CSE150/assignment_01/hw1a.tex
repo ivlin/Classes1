@@ -1,0 +1,101 @@
+\documentclass{article}
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\begin{document}
+
+Ivan Lin
+
+Dr. Michael Bender
+
+CSE150 - Honors Foundations of Computer Science Fall 2016
+
+\begin{center}
+Homework 1a
+\end{center}
+\underline{Problem 1}
+Write $P\implies Q$ using $\lor$ and $\sim$. Show that your two representations are equivalent.
+\begin{center}
+$(P\implies Q)\iff (\sim P \lor Q)$
+
+\begin{tabular}{|l|l|l|l|l|}
+  \hline $P$ & $Q$ & $\sim P$ & $P\implies Q$ & $\sim P \lor Q$\\  
+  \hline T & T & F & T & T\\
+  \hline T & F & F & F & F\\
+  \hline F & T & T & T & T\\
+  \hline F & F & T & T & T\\
+  \hline
+\end{tabular}
+\end{center}
+
+\underline{Problem 2}
+Prove that the propositional formulas
+\begin{center}
+  $P\lor Q\lor R$
+\end{center}
+and
+\begin{center}
+  $(P\land\sim Q)\lor(Q\land\sim R)\lor(R\land\sim P)\lor(P\land Q\land R)$
+\end{center}
+are equivalent.
+
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
+  \hline $P$ & $Q$ & $R$ & $\sim P$ & $\sim Q$ & $\sim R$ & $P\land \sim Q$ & $Q\land \sim R$ & $R\land \sim P$ & $P\lor Q\lor R$\\
+  \hline T & T & T & F & F & F & F & F & F & T \\ 
+  \hline T & T & F & F & F & T & F & T & F & F \\
+  \hline T & F & T & F & T & F & T & F & F & F \\
+  \hline F & T & T & T & F & F & F & F & T & F \\
+  \hline T & F & F & F & T & T & T & F & F & F \\
+  \hline F & F & T & T & T & F & F & F & T & F \\
+  \hline F & T & F & T & F & T & F & T & F & F \\
+  \hline F & F & F & T & T & T & F & F & F & F \\
+  \hline
+\end{tabular}
+\begin{tabular}{|l|l|}
+  \hline $(P\land\sim Q)\lor(Q\land\sim R)\lor(R\land\sim P)\lor(P\land Q\land R)$ & $P\lor Q\lor R$\\
+  \hline T & T\\
+  \hline T & T\\
+  \hline T & T\\
+  \hline T & T\\
+  \hline T & T\\
+  \hline T & T\\
+  \hline T & T\\
+  \hline F & F\\
+  \hline
+\end{tabular}
+\end{center}
+
+
+\underline{Problem 3}
+(a) Write the biconditional ($\Leftrightarrow$) using only implies ($\implies$) and and ($\land$). Prove that the new version is equivalent.
+\begin{center}
+$(P\Leftrightarrow Q)\iff (P\implies Q)\land (Q\implies P)$
+
+  \begin{tabular}{|l|l|l|l|l|l|}
+    \hline $P$&$Q$&$P\implies Q$&$Q\implies P$&$P(\implies Q)\land (Q\implies P)$&$P\Leftrightarrow Q$\\
+    \hline T&T&T&T&T&T \\
+    \hline T&F&F&F&F&F \\
+    \hline F&T&T&T&F&F \\
+    \hline F&F&T&T&T&T \\
+    \hline
+  \end{tabular}
+\end{center}
+(b) Write it using only $\lor$ and $\sim$. Show your derivation.
+\begin{center}
+  $(P\Leftrightarrow Q)\iff (P\implies Q)\land (Q\implies P)$
+
+  given  $A\iff \sim (P\implies Q), B\iff \sim (Q\implies P)$
+
+  $(P\implies Q)\land (Q\implies P)\iff (\sim A\land \sim B)$
+
+  $(\sim A\land \sim B) \iff \sim(A\lor B)$ by De Morgan's Laws
+
+  $\sim(A\lor B)\iff \sim(\sim (P\implies Q) \lor \sim (Q\implies P))$
+  
+  since $(P\implies Q)\iff(\sim P \lor Q)$
+
+  $\sim(\sim (P\implies Q) \lor \sim (Q\implies P)) \iff \sim(\sim (\sim P \lor Q) \lor \sim (\sim Q\lor P))$
+\end{center}
+\end{document}

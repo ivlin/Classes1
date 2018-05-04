@@ -1,0 +1,68 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\begin{document}
+
+
+Ivan Lin\newline{}
+Dr. Esther Arkin\newline{}
+AMS301\newline{}
+4/14/17
+
+\begin{center}
+  Homework 9a
+\end{center}
+
+\underline{Section 6.1 Problem 4}\newline{}
+
+Build a generating function for $a_r$, the number of distributions of $r$ identical objects into \newline{}
+
+a. Five different boxes with at most three objects in each box
+
+$r=e_1+e_2+e_3+e_4+e_5$\newline{}
+$0 \leq e_i\leq 3$\newline{}
+$g(x)=(1+x+x^2+x^3)^5$\newline{}
+$g(x)=(1+x+x^2)^5$\newline{}
+
+b. Three different boxes with between three and six objects in each box\newline{}
+
+$r=e_1+e_2+e3$\newline{}
+$3 \leq e_i \leq 6$\newline{}
+$g(x)=(x^3+x^4+x^5+x^6)^3$\newline{}
+$g(x)=[x^3(1+x+x^2+x^3)]^3$\newline{}
+$g(x)=x^9(1+x+x^2+x^3)^3$\newline{}
+
+c. Six different boxes with at least one object in each box\newline{}
+
+$r=e_1+e_2+e_3+e_4+e_5+e_6$\newline{}
+$e_i \geq 1$\newline{}
+$g(x)=(x+x^2+x^3+...)^6$\newline{}
+$g(x)=[x(1+x+x^2+...)]^6$\newline{}
+$g(x)=x^6(1+x+x^2+...)^6$\newline{}
+
+d. Three different boxes with at most five objects in the first box\newline{}
+
+$r=e_1+e_2+e_3$\newline{}
+$e_1\leq 5, e_i \geq 0$\newline{}
+$g(x)=(1+x+x^2+x^3+x^4+x^5)(1+x+x^2+...)^2$\newline{}
+
+\underline{Section 6.1 Problem 14}
+
+Find a generating function for $a_r$, the number of ways a roll of six distinct dice can show a sum $r$ if\newline{}
+
+a. The first three dice are odd and the second three even\newline{}
+
+$r=e_1+e_2+e_3+e_4+e_5+e_6$\newline{}
+$e_1, e_2, e_3 \in \{1,3,5\}, e_4, e_5, e_6 \in \{2,4,6\}$\newline{}
+$g(x)=(x+x^3+x^5)^3(x^2+x^4+x^6)^3$\newline{}
+
+b. The $i$th die does not show a value of $i$
+
+$r=e_1+e_2+e_3+e_4+e_5+e_6$\newline{}
+$\{e_n|e_n\in \{1,2,3,4,5,6\}, e_n\neq n\}$\newline{}
+$g(x)=(x^2+x^3+x^4+x^5+x^6)(x+x^3+x^4+x^5+x^6)(x+x^2+x^4+x^5+x^6)(x+x^2+x^3+x^5+x^6)(x+x^2+x^3+x^4+x^6)(x+x^2+x^3+x^4+x^5)$\newline{}
+
+\end{document}

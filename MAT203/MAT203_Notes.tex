@@ -1,0 +1,368 @@
+\documentclass [12 pt, oneside] {book}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\begin{document}
+
+\frontmatter
+
+\title{MAT 203 - Calculus III with Applications}
+\author{Lecturer: Dr. Song Sun}
+\date{Fall 2016 Term}
+
+\maketitle
+
+\tableofcontents
+
+\chapter{Introduction}
+
+\subsection{Lecture Information}
+Lecturer: Dr. Song Sun\newline
+Office: Room 4-114 Math Tower\newline
+Office Hours: Wednesday 2:00 - 4:00, Thursday 11:30 - 12:30
+\subsection{Recitation Information}
+Lecturer: Ruijie Yang\newline
+Office: Room 2-109 Math Tower\newline
+Office Hours: Monday 11:00 - 12:00 noon, Wednesday 1:00 - 2:30
+
+\mainmatter
+\chapter{Vector Operations}
+\section{Vectors in the Plane}
+\subsection{Introduction to Vectors}
+A \textbf{vector} is a direct line segment. \newline
+Two vectors are said to be \emph{equal} if they have the same length and direction, even if their initial points are different. So  given vectors $\vec{P_1Q_1}$ and $\vec{P_2Q_2}$, proving equivalence requires proving:
+\begin{itemize}
+\item $\sqrt{(x_1-x_2)^2+(y_1-y_2)^2} = \| \vec{P_1Q_1}\| = \| \vec{P_2Q_2}\|$
+\item slope of $P_1Q_1$ = slope of $P_2Q_2$: $\frac{\Delta y}{\Delta x}$
+\end{itemize}
+
+The component form of a vector, where $v_1$ and $v_2$ are the x and y components respectively: $\vec{v}=<v_1,v_2>$
+When given points P and Q on a plane, the component form of the vector formed is represented as $<q_1-p_1,q_2-p_2>$
+When $\vec{PQ} = 1$, it is called the unit vector.
+
+\subsection{Vector Operations}
+Given $\vec{u} = <u_1,u_2>, \vec{v} = <v_1,v_2>$:
+\begin{itemize}
+\item Sum of Vectors: $\vec{u} + \vec{v} = <u_1 + v_1, u_2 + v_2>$
+\item Difference of Vectors: $\vec{u} - \vec{v} = <u_1 - v_1, u_2 - v_2>$
+\item Scalar Multiplication: $c\vec{u} = <cu_1, cu_2>$
+\end{itemize}
+
+\subsection{Unit Vectors}
+A unit vector has a magnitude of 1. Any vector's unit vector can be found by dividing the vector by its magnitude.\newline
+Normalizing Vectors: $\vec{v} = \| \vec{v} \| * \frac{\vec{v}}{\| \vec{v} \|}$
+
+where $\| \vec{v} \|$ is the magnitude of the vector and $\frac{\vec{v}}{\| \vec{v} \|}$ is the unit vector\newline
+The standard unit vector is represented: $\vec{v} = <v_1,v_2> = v_1\vec{i} + v_2\vec{j}$\newline
+A unit vector forming $\theta$ with the x-axis: $\vec{v} = \| v \|cos(\theta)\vec{i} + \| v \|sin(\theta)\vec{j}$
+
+\section{Vectors in the Space}
+\subsection{Vectors in Three Dimensions}
+Working with vectors in three dimensions.
+
+Given a vector $\vec{PQ}$ with three dimensions:
+\begin{itemize}
+\item $\vec{v}=<v_1,v_2,v_3>$ as dimensions x, y and z
+\item $\| v \|=\sqrt{v_1^2+v_2^2+v_3^2}$
+\end{itemize}
+
+\subsection{Unit Circles and Unit Spheres}
+A circle centered at point P with radius r, $r^2=(x_1-p_1)^2+(x_2-p_2)^2$
+A sphere centered at point P with radius r, $r^2=(x_1-p_1)^2+(x_2-p_2)^2+(x_3-p_3)^2$
+A unit circle or a unit sphere would have a radius of 1, so any vector drawn from the center to a point on the circle or sphere would be a unit vector.
+
+\subsection{Parallel Vectors}
+Given vectors $\vec{v}$ and $\vec{u}$ are not 0, the vectors are called parallel if there exists a number c such that $\vec{u}=c\vec{v}$\newline
+If three points are collinear, that is sufficient to prove that vectors drawn between any two of the points are parallel. 
+
+\subsection{Dot Product}
+$\vec{u} = <u_1,u_2,u_3>, \vec{v} = <v_1,v_2,v_3>$\newline
+Properties:
+\begin{itemize}
+\item Commutative - $\vec{u}\cdot\vec{v}=\vec{v}\cdot\vec{u}$
+\item Distributive - $(\vec{u}+\vec{v})\cdot\vec{w}=\vec{u}\cdot\vec{w}+\vec{v}\cdot\vec{w}$
+\item Associative - c$\vec{u}\cdot\vec{v}=c(\vec{v}\cdot\vec{u})$
+\item $\vec{u}\cdot\vec{u}=\|u\|^2$
+\end{itemize}
+The geometric meaning of the dot product: $cos\theta = \frac{\vec{u}\cdot\vec{v}}{\|u\|\|v\|}$
+The dot product produces a scalar equal to the projection of one vector on another. $\vec{u}$ and $\vec{v}$ are orthogonal if the dot product is 0.
+
+Applications: $work = \|\vec{F}\|\cdot\|\vec{u}\| = \|proj_{\vec{u}}\vec{F}\|\cdot\|\vec{u}\|$
+
+\subsection{Projections}
+The projection of a vector $\vec{u}$ onto $\vec{v}$ is calculated by:
+$proj_{\vec{v}}\vec{u}=\frac{\vec{u}\cdot\vec{v}}{\|v\|^2}\vec{v}$
+
+\subsection{Cross Product}
+The cross product of two vectors produces a vector orthogonal to the original two. Two parallel vectors have a cross product equal to $\vec{0}$.
+
+Given $\vec{u}=<u_1,u_2,u_3>, \vec{v}=<v_1,v_2,v_3>$
+
+$\vec{u}\times\vec{v}=<u_2v_3-u_3v_2, u_1v_3-u_3v_1, u_1v_2-u_2v_1>$
+
+The cross product is anticommutative, meaning that if the order of the two vectors in the cross product is switched, the answer will be negated.
+
+The area of a parallelogram formed with adjacent vectors $\vec{u}, \vec{v}$ is calculated by:
+$area=\|\vec{u}\times\vec{v}\|$
+while the volume of a parallelepiped formed with adjacent vectors $\vec{u}, \vec{v}, \vec{w}$ is calculated by:
+$area=|\vec{u}\times\|\vec{v}x\vec{w}\||$
+
+A triple scalar product is formed from $\vec{u},\vec{v},\vec{w}$: $\vec{w}\cdot(\vec{u}\times\vec{v})$
+
+\section{Lines and Planes}
+Given two points, P and Q, and a vector, $\vec{v}$, which are collinear.
+
+Since $\vec{PQ}=t\vec{v}$ where t is some number, $q_1-p_1=tv_1, q_2-p_2=tv_2, q_3-p_3=tv_3$
+The parametric form of a line passing through P with direction 
+\begin{center}$\vec{v}$: $x_1=p_1+tv_1, x_2=p_2+tv_2, x_3=p_3+tv_3$\end{center}
+The symmetric form is 
+\begin{center}$\frac{x_1-p_1}{v_1}=\frac{x_2-p_2}{v_2}=\frac{x_3-p_3}{v_3}$\end{center}
+
+\subsection{Plane Equations}
+Given a plane with two points, P and Q, and a normal vector $\vec{n}$, the equation of the plane is:
+\begin{center}$n_1(x_1-p_1)+n_2(x_2-p_2)+n_3(x_3-p_3)=0$ \end{center}
+or more commonly:
+\begin{center} $ax_1+bx_2+cx_3+d=0$\end{center} 
+When given three points on a plane, simply find the normal vector from the vectors made by connecting the points.
+
+\subsection{Distance Formulae}
+\begin{itemize}
+\item Distance between two points: given points P,Q $Dist(P,Q)=\|\vec{PQ}\|$
+\item Distance bewteen a point and a plane: given point P and a plane, select a point Q on the plane and find the normal vector $\vec{n}$, the distance is the scalar projection of $\vec{PQ}$ onto $\vec{n}$, or $proj_{\vec{n}}\vec{PQ}=\frac{\vec{PQ}\cdot\vec{n}}{\|\vec{n}\|}$
+\item Distance between two planes: given two planes, select point P on one of them and find the distance between P and the other plane
+\item Distance between a point and a line: given point P and a line, let Q be a point on the line, $Dist(P ,line)=d(P,Q)sin(\theta) = \frac{\|\vec{PQ}\times\vec{v}\|}{\|\vec{v}\|}$
+\end{itemize}
+
+\section{Surfaces}
+\subsection{Six Types of Quadric Surfaces}
+The trace of a surface is the cross section of the surface viewed along a plane.
+\begin{itemize}
+\item Ellipsoid: $\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}=1$
+\begin{itemize}
+\item Trace on xy-plane: ellipse
+\item Trace on yz-plane: ellipse
+\item Trace on xz-plane: ellipse
+\end{itemize}
+\item Hyperbloid of One Sheet: $\frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}=1$
+\begin{itemize}
+\item Trace on xy-plane: ellipse 
+\item Trace on yz-plane: hyperbola
+\item Trace on xz-plane: hyperbola
+\end{itemize}
+\item Hyperbloid of Two Sheets: $\frac{x^2}{a^2}-\frac{y^2}{b^2}-\frac{z^2}{c^2}=1$
+\begin{itemize}
+\item Trace on xy-plane: hyperbola
+\item Trace on yz-plane: ellipse
+\item Trace on xz-plane: hyperbola
+\end{itemize}
+\item Elliptic Cone: $\frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}=0$
+\begin{itemize}
+\item Trace on xy-plane: ellipse 
+\item Trace on yz-plane: X-shaped intersection or hyperbola
+\item Trace on xz-plane: X-shaped intersection or hyperbola
+\end{itemize}
+\item Elliptic Paraboloid: $\frac{x^2}{a^2}+\frac{y^2}{b^2}=z$
+\begin{itemize}
+\item Trace on xy-plane: ellipse
+\item Trace on yz-plane: parabola
+\item Trace on xz-plane: parabola
+\end{itemize}
+\item Hyperbolic Parabloid: $\frac{x^2}{a^2}-\frac{y^2}{b^2}=z$
+\begin{itemize}
+\item Trace on xy-plane: hyperbola
+\item Trace on yz-plane: parabola
+\item Trace on xz-plane: parabola
+\end{itemize}
+\end{itemize}
+\section{Coordinate Systems}
+\subsection{Rectangular Coordinates}
+Rectangular coordinates are represented in dimensions $(x,y,z)$.
+\subsection{Cylindrical Coordinates}
+Similar to polar coordinates, but with a third dimension. Cylindrical coordinates are represented in dimensions 
+\begin{center}$(r,\theta,z)$\end{center}
+\begin{itemize}
+\item$r$ represents distance from the origin along the xy-plane
+ \item$\theta$ represents the angle between the line projection to the xy-plane and the x-axis
+ \item $z$ represents the value along the z-axis orthogonal to the plane
+\end{itemize}
+\subsection{Spherical Coordinates}
+Spherical coordinates are represented in dimensions 
+\begin{center}$(\rho,\theta,\phi)$\end{center}
+\begin{itemize}
+\item $\rho$ represents the distance from the origin
+\item $\theta$ represents the angle between the line projection to the xy-plane and the x-axis
+\item $\phi$ represents the angle between the the line and the z-axis.
+\end{itemize}
+\section{Vector Valued Functions}
+A vector value function exists in three dimensions.
+\subsection{Operations on Vector Value Functions}
+Operations performed with vector valued functions are simply applied individually to the x, y, and z components. This is true for addition, subtraction, integration, and differentiation. The limit of the function can also be found by finding the limit for each of the components individually.
+\subsection{Position, Velocity, and Acceleration}
+Just like in two dimensions, acceleration is the derivative of velocity, which in turn is the derivative of position, in three dimensions.
+\begin{itemize}
+	\item $r(t)=<x (t) + y(t) + z(t)>$
+\item $v(t)=r'(t)=<x'(t) + y'(t) + z'(t)>$
+\item $a(t)=v'(t)=r"(t)=<x'(t) + y'(t) + z'(t)>$
+\item Unit Tangent: $\vec{T}(t)=\frac{\vec{v}(t)}{\|\vec{v}(t)\|}=\frac{\vec{r'}(t)}{\|\vec{r'}(t)\|}$
+\item Unit Normal: $\vec{N}(t)=\frac{\vec{T}(t)}{\|\vec{T}(t)\|}$
+\end{itemize}
+When dealing with acceleration vectors in a curve, acceleration lies on the plane determined by T(t) and N(t). The components of acceleration in each direction are as follows. The normal component of acceleration, also called the centripetal component, is always positive and angled toward the center.
+\begin{itemize}
+\item $a(t) = a_TT(t) + a_NN(t)$
+\item tangential component of acceleration: $a_T = \frac{d}{dt}\|v\| = |r"| = a\cdot T = \frac{v\cdot a}{\|v\|}$
+\item normal component of acceleration: $a_N = \|v\|\|T'\| = a\cdot N = \frac{\|v\times a\|}{\|v\|}=\sqrt{\|a\|^2-a_T^2}$
+\end{itemize}
+\subsection{Arc Length and Curvature}
+Given a curve, $r(t)=(x(t),y(t),z(t))$ on interval $I=[a,b]$, the arc length is calculated through:
+\begin{center}$L=\int_{a}^{b}\|v(t)\| = \int_{a}^{b}\|r'(t)\|$ \end{center}
+There are several ways of calculating a curve's curvature, depending on how the curve is represented:
+\begin{itemize}
+\item Curve parameterized by arc length s, $r(s)$: $k(s)=\|r'(s)\|$
+\item Curve parameterized by some variable t, $r(t)$: $k(t)=\frac{\|r'(t)\times r"(t)\|}{\|r'(t)\|^3}$
+\item Curve represented on a cartesian plane $y=f(x)=x$: $k(x)=\frac{\|y"\|}{(1+|y'|^2)^{\frac{3}{2}}}$
+The circle tangential to a curve is called the circle of curvature. Its radius, the radius of curvature, is:
+\begin{center}$R=\frac{1}{k}$\end{center}
+\end{itemize}
+\chapter{Functions of Several Variables}
+A function in severable variables takes in several input values and produces a single output. $f(x,y,z)$
+Given a region R, (x,y) is an interior point of R.
+$(x_0,y_0)$ is a boundary point for R if for all $\delta \geq 0$ in the $\delta$ neighborhood of $(x_0,y_0)$ there are both points in R and not in R.
+A region in R is open if all points in R are interior points.
+A region in R is closed if it contains all of its boundary points. 
+
+\section{Contour Maps}
+A contour map is an image of a surface onto a plane. Essentially it is the coordinates of all independent variables $(x,y,...)$ that when passed to a function $f$, produces a constant $c$. (e.g. topographic maps)
+
+\section{Chain Rule}
+For a function $f(x,y),x(t),y(t)$, in order to get $f$ as a partial derivative of $c$:
+$\frac{\delta z}{\delta t}=\frac{\delta z}{\delta x} \frac{\delta x}{\delta t}+\frac{\delta z}{\delta y} \frac{\delta y}{\delta t}$
+To generalize, to take the derivative of a composition of functions, one must take the derivative by taking the sum of all components that are a function.
+
+\section{Directional Derivatives}
+The gradient of a function is a vector where is component is a derivative of the function with respect to a given direction. (e.g. given $f(x,y,z), \Delta f = <f_x,f_y,f_z>$)
+\begin{itemize}
+\item the directional derivative in the direction of unit vector $\vec{u}$, $D_{\vec{u}}f = \triangledown \cdot \vec{u}$
+\item $\triangledown f$ at is the direction of greatest increase at $(x_0,y_0,z_0)$
+\item $-\triangledown f$ at is the direction of greatest decrease at $(x_0,y_0,z_0)$
+\end{itemize}
+
+\section{Tangent Planes and Normal Lines}
+Given a curve, $F(x,y,z)=0$ and $\triangledown f(x_0,y_0,z_0) \neq 0$
+\begin{itemize}
+\item normal vector: $\triangledown F_{(x_0,y_0,z_0)}$ defines the normal line at $(x_0,y_0,z_0)$
+\item tangent plane: $\triangledown F_{(x_0,y_0,z_0)}\cdot <x-x_0,y-y_0,z-z_0> = F_x|_{(x_0,y_0,z_0)}(x-x_0)+F_y|_{(x_0,y_0,z_0)}(y-y_0)+F_z|_{(x_0,y_0,z_0)}(z-z_0)=0$
+\item tangent line: $\triangledown F_{(x_0,y_0,z_0)}=0$
+\end{itemize}
+
+\section{Extrema of a Function}
+Extrema for functions in multiple variables is similar to finding extra for a function in a single variable.
+In order to find the relative extrema of a function $f(x,y)$:
+\begin{enumerate}
+\item Step 1: Find critical points where $\triangledown f = 0$
+\item Step 2: Perform the second derivative test. Let $d$ be the determinant, $d=f_{xx}f_{yy}-f_{xy}^2$
+\item\begin{itemize}
+	\item $f_{xx}f_{yy} > 0, f_{xx}, f_{yy} > 0 $ - point is a relative minimum
+	\item $f_{xx}f_{yy} > 0, f_{xx}, f_{yy} < 0 $ - point is a relative maximum
+	\item $f_{xx}f_{yy} < 0 $ - point is a saddle point (minimum on one axis, maximum on another)
+	\item $f_{xx}f_{yy} = 0 $ - not enough information
+\end{itemize}
+\item Note: In the case of a bounded region, check derivative along the bounds of the region
+\end{enumerate}
+\section{Lagrange Multipliers}
+Given a surface $f(x,y)$, the process of finding a relative maximum or minimum can be simplified by using Lagrange Multipliers. This involves using a function $g(x,y)$ that is tangent to $f(x,y)$ at some point $(x_0,y_0)$. At the point of tangency, $\triangledown f(x,y) = \triangledown g(x,y)$.
+
+\underline{Langrange's Theorem}: If $f$ has an extremum at point $(x_0,y_0)$ on the smooth constraint $\triangledown g(x,y)=0$ and $\triangledown g(x_0,y_0)\neq 0$, then $\lambda$ such that $\triangledown f(x_0,y_0)=\lambda g(x_0,y_0)$.
+
+\chapter{14}
+\section{Iterated Integrals}
+
+The area enclosed between two functions, $f$ and $g$, in the interval between $a$ and $b$ can be calculated by $\int_a^b f(x)-g(x) dx$. 
+
+Alternatively, this can be written as $\int_a^b\int_{g(x)}^{f(x)}dydx$, where the vertical distance is denoted by a line from $f(x)$ to $g(x)$. This is called the vertically simple form, where the distance along the y-axis is calculated first. The integrals can be reversed to the horizontally simple form where the length along the x-axis is calculated first, but the intervals across which the integral is calculated may change.
+
+Furthermore, this can be expanded to three dimensions. The volume of a function $z$ over a region $R$ can be denoted $\iint_R z(x,y) dA$.
+
+Assuming that the function is $z(x,y)$ and integrated over the xy-plane, the double integral over the region $R$ can be be replaced with the horizontally or vertically simple form of two integrals that take the area of the region. Depending on which way is easier to integrate, the integral can be written:
+
+\underline{Fubini's Theorem}
+\begin{enumerate}
+\item If $R={a\leq x\leq b, g_1(x)\leq y\leq g_2(x)}, \iint_R f(x,y)dA = \int_a^b\int_{g_1(x)}^{g_2(x)}$
+\item If $R={a\leq y\leq b, g_1(y)\leq x\leq g_2(y)}, \iint_R f(x,y)da = \int_a^b\int_{g_1(y)}^{g_2(y)}$.
+\end{enumerate}
+
+\subsection{Average Value of a Function}
+The average value of a function, $f$, defined over a region $r$ in the xy-plane:
+
+$avg = \frac{1}{area(R)}\iint_R f(x,y)dA$
+
+\section{Change of Variable Polar Coordinates}
+When converting polar coordinates to rectangular coordinates, $x=rcos(\theta), y=rsin(\theta)$.
+
+When converting rectangular coordinates to polar coordinates, $r^2=x^2+y^2, tan(\theta)=\frac{y}{x}$
+
+To find the area of a section of a circle or disk, it is best to work in polar coordinates., $a\leq r\leq b, \theta_1\leq\theta\leq\theta_2$
+
+So given an $R: \alpha\leq\theta\leq\beta$, $g_1(\theta)\leq r\leq g_2(\theta)$, $0\leq\beta - \alpha\leq 2\pi$, then:
+
+$\iint_R f(x,y)dA = \int_\alpha^\beta\int_{g_1(\theta)}^{g_2(\theta)} f(r_cos(\theta),r_sin(\theta))rdrd\theta$
+
+Note: The reason it become necessary to multiply by $r$ inside the integral is because polar coordinates are not like rectangular coordinates where position do not matter so long as $\Delta x$ and $\Delta y$ are the same. In polar coordinates, even if $\Delta r$ is the same, the circumference of the ring will change at different values of $r$.
+
+\section{Center of Mass and Moments of Inertia}
+
+\begin{itemize}
+\item Mass of a lamina with a density function P: $mass = \iint_R P(x,y) dxdy$
+\item Center of mass of a lamina with density function P: $C(\bar{x},\bar{y}) = C(\frac{M_y}{m}, \bar{y}=\frac{M_x}{m})$
+\item $M_x=\iint_R yP(x,y)dA, M_y=\iint_R xP(x,y)dA$
+\item $I_x=\iint_R y^2P(x,y)dA, I_y=\iint_R x^2P(x,y)dA$
+\end{itemize}
+
+\section{Surface Area}
+
+Derivation of arc length of a curve:
+\begin{center}
+$L_segment=\sqrt{\Delta x^2 + \Delta y^2}=\sqrt{\Delta x^2 + (f'(x)\Delta x)^2}=\sqrt{1 + \Delta f'(x)^2}\Delta x$
+
+therefore on a curve with endpoints $a,b$: $L=\int_a^b \sqrt{1 + \Delta f'(x)^2}dx$
+\end{center}
+
+Derivation of surface area formula:
+
+\begin{center}
+
+For any point on a surface, its tangent plane is formed by two vectors, $<\Delta x, 0, f_x\Delta x>, <0,\Delta y, f_y\Delta y>$
+
+Area of the region is determined by the cross product of these two vectors: 
+
+$\|\vec{v_1}\times\vec{v_2}\|=<-f_x\Delta x\Delta y, -f_y\Delta x\Delta y, \Delta x\Delta y>\|=\sqrt{1+f_x^2+f_y^2}\Delta x\Delta y$
+
+therefore surface area of a surface over region R: $SA=\iint_R \sqrt{1+f_x^2+f_y^2} dA$
+\end{center}
+
+\section{Triple Integrals}
+
+$\iiint_S f(x,y,z)dV$
+
+Reminder: When converting between different orders for integration, draw the solid and change the bounds for the integrals.  
+
+\section{Vector Fields}
+
+A vector field F is conservative if $\exists f$ such that $F = \triangledown f$. If it exists, $f$ is called the potential fucntion of the vector field
+
+Criterion for testing a conservative vector field F:
+\begin{itemize}
+	\item If f is a conservative vector field, $M=\frac{\delta f}{\delta x}=f_x, N=\frac{\delta f}{\delta y}=f_y$ and $\frac{\delta M}{\delta y}=\frac{\delta}{\delta y}(\frac{\delta f}{\delta x})=f_{xy}=f_{yx}=\frac{\delta}{\delta x}(\frac{\delta f}{\delta y})=\frac{\delta N}{\delta y}$  
+	\item for $F=M\vec{i}+N\vec{j}$, F is conservative if $\frac{\delta M}{\delta y}=\frac{\delta N}{\delta x}$ 
+	\item for $F=M\vec{i}+N\vec{j}+P\vec{k}$, F is conservative if 
+\begin{center}
+	$curl F = \triangledown\times F= 
+	\begin{vmatrix}
+		i & j & k \\
+		\frac{\delta}{\delta x} & \frac{\delta}{\delta y} & \frac{\delta}{\delta z} & \\
+		M & N & P
+	\end{vmatrix}
+	=\vec{0}$
+	\end{center}
+\end{itemize}
+\end{document}

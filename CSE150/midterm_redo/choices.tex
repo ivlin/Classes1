@@ -1,0 +1,186 @@
+% !TEX root =  midterm.tex
+
+\newpage
+
+\addtocounter{problemctr}{1}
+
+{\bf
+Problem \theproblemctr.  (\thechoices\xspace points)}
+\\
+
+{\bf Write your choice on the left of the question number.}
+
+
+\begin{center}
+{\bf Part A}\\
+\medskip
+(In this part each question has a {\bf single} correct answer. 4 points each.)
+\end{center}
+\bigskip
+
+\begin{questions}
+
+\question Which of the following is a proposition:
+\begin{choices}
+\choice A proposition.
+\choice Choose me.
+\choice Don't you want to choose the last option? - 
+\choice Surely you're joking. - \textit{Right answer. This statement can be true or false, which makes it a proposition. Other statements are imperative, interrogative, or fragments.}
+\choice Trust none of the above answers.
+\end{choices}
+
+\vspace{1.8in}
+
+\question Let $S$ be an infinite set and suppose we have $S=S_1\times S_2 \times S_3\times \dots \times S_n$, where $n\in \N$. Which of the following is correct?
+\begin{choices}
+\choice At least one of the sets $S_i$ is an infinite set. - \textit{Right answer. The cartesian product of two finite sets is finite, which means for the product of a finite amount of sets to be infinite, one of the factors must be infinite}
+\choice At least one of the sets $S_i$ is an finite set. 
+\choice At most one of the sets $S_i$ can be an infinite set.
+\choice At most one of the sets $S_i$ is a finite set.
+\choice None of the above.
+\end{choices}
+
+
+\newpage
+
+\question If $f(x) = \lfloor x \rfloor$, over which of the following
+domains and co-domains is it bijective? (Answers in the form (Domain,
+Co-domain).)\footnote{The notation $\lfloor x\rfloor$ (the ``floor''
+  of $x$) means the largest integer less than or equal to $x$.  Thus,
+  $\lfloor 2\rfloor=2$ and $\lfloor 1.9\rfloor=1$.}
+\begin{choices}
+\choice ($\mathbb{R}, \mathbb{R}$) 
+\choice ($\mathbb{Z}, \mathbb{N}$) 
+\choice ($\mathbb{Z}, \mathbb{Z}$) - \textit{Right answer. Every element in $\mathbb{Z}$ maps to itself which means there exists a one-to-one relationship.}
+\choice ($\mathbb{Z}, \mathbb{Q}$) 
+\choice ($\mathbb{Q}, \mathbb{R}$) 
+\end{choices}
+
+\vspace{1.8in}
+
+\question Recall the block-unstacking problem from class. 
+We start with a stack of $n$ blocks, and the objective is to unstack them fully. 
+The \emph{unstacking operation} takes a stack of size $s$, and splits it into two stacks, of size $x$ and $s-x$. 
+The unstacking cost is $x(s-x) + 1$.  What is the minimum cost to unstack all of the blocks? 
+\begin{choices}
+\choice $n^2-1$
+\choice $n(n-2) + 2$
+\choice $n(n-1)/2$ 
+\choice $n(n+1)/2$
+\choice $(n+2)(n-1)/2$ - \textit{Right answer. Solved by trial and error, process of elimination.}
+\end{choices}
+
+\newpage
+
+\question If $a \equiv 0 \Mod 3,\ a \equiv 1 \Mod 4,\ a \equiv 2 \Mod 5$, which of the following could $a$ equal?
+\begin{choices}
+\choice 27
+\choice 256
+\choice 257
+\choice 357 - \textit{Right answer. Simple plug in the choice, trial and error.}
+\choice 2357
+\end{choices}
+
+\vspace{1.8in}
+
+\question We say that a relation $R$ is \defn{coreflexive} if for any $x$ and $y$: 
+$$ %\forall x,y\,\,\, 
+(x,y)\in R \, \Rightarrow\,  x=y.$$  
+Let $S = \{a, b, c\}$.  Which of the following relations on $S$ is
+{\bf both} reflexive and coreflexive?
+\begin{choices}
+\choice $\emptyset$
+\choice $\{(a,c),(b,c),(c,a),(c,b)\}$
+\choice $\{(a,a),(b,b),(c,c)\}$ - \textit{Right answer. Both reflexive and coreflexive, whereas others choices are not coreflexive or not reflexive.}
+\choice $\{(a,a),(b,b)\}$
+\choice $\{(a,a),(b,b),(c,c),(a,c),(a,b)\}$
+\end{choices}
+
+\newpage
+
+\question Which of the following formulae correctly represents ``The set $A$ has exactly two elements''?
+\begin{choices}
+\choice $\exists x,y\in A,\,\, x\neq y$.
+\choice $\forall x,y\in A,\,\, x\neq y$.
+\choice $\forall z\in A,\,\, \exists x,y\in A,\ (x\neq y)\land \big( (z=x) \lor (z=y) \big)$.
+\choice $\exists x,y\in A,\,\, (x\neq y)\land \big(\forall z\in A,\ (z\neq x) \Rightarrow (z=y)\big)$. - \textit{Right answer. Others have cases that do not fulfill the statement.}
+\choice $\exists x,y\in A,\,\, \forall z\in A,\,\, (z=x) \lor (z=y)$.
+\end{choices}
+
+\vspace{1.8in}
+
+
+\question Let $T$ be the set of all reflexive binary relations on $\N$, the set of natural numbers. Then $T$ is uncountable. We prove it by contradiction.\\
+
+Assume we have a enumeration $T = \{R_1,\ R_2,\ \dots\}$. Then we create a relation $R$, such that $(i,i)\in R,\ \forall i\in \N$. And for all $i$ and $j$ where $i\neq j$, $(i,j)\in R \iff (i,j)\not\in R_{\lvert i-j \rvert}$. Then $R\not\in T$ but $R$ is reflexive. So $T$ is uncountable.\\
+
+Which of the following judgments is correct?
+\begin{choices}
+\choice The conclusion is wrong.
+\choice The proof is wrong because the assumed enumeration is not clear.
+\choice The proof is wrong because $R$ is not even reflexive.
+\choice The proof is wrong because $R$ could still equal some $R_k\in T$.
+\choice The proof is right. - \textit{Right answer. The proof is correct.}
+\end{choices}
+
+\end{questions}
+
+\newpage
+
+\begin{center}
+{\bf Part B}\\
+\medskip
+(In this part each question may have {\bf one or more} correct answers. 4 points each.\\ If your answer is a {\bf nonempty strict subset} of the correct answer, you get 2.5 points.)
+\end{center}
+\bigskip
+
+\begin{questions}
+
+\question Let $R_1$ and $R_2$ be two binary relations. 
+
+$R_1$ is said to be \defn{contained} in $R_2$ if for any $x$ and $y$, $\, (x,y)\in R_1 \Rightarrow (x,y)\in R_2$. 
+
+The relation ``is contained in'' (which is a relation on relations)
+is:
+\begin{choices}
+\choice Reflexive - \textit{Right answer. All elements in a set is an element of that same set}
+\choice Symmetric
+\choice Transitive - \textit{Right answer. Diagrammed out, if A is contained in B and B is contained in C, there exists no elements in A not in C, so A is contained in C.}
+\end{choices}
+
+\vspace{1.8in}
+
+\question Let $A = \Big\{\emptyset,\{\emptyset\},\big\{\emptyset,\{\emptyset\} \big\} \Big\}$. Which of the following are (is) true?
+\begin{choices}
+\choice $\Big\{\big\{\{\emptyset\}\big\}\Big\} \in P(A)$.
+\choice $A \times \{\emptyset\} = \{{\emptyset}\}$.
+\choice $A \times \emptyset = \emptyset$. - \textit{Right answer. A set times the empty set produces the empty set.}
+\end{choices}
+\vspace{0.2in}
+
+
+\newpage
+
+\question Let $A$ be an infinite set and $B$ be a countable set. Which pair(s) of sets of the following must have a bijection?
+\begin{choices}
+\choice $A$ and $B$
+\choice $A$ and $P(B)$
+\choice $A$ and $A \cap B$
+\choice $A$ and $A \cup B$ - \textit{Right answer. $A$ is infinite and $A \cup B$ is also infinite, so a bijection can exist. Special cases exist for other answers such that there could exist no bijection.} 
+\choice $A$ and $A \times B$
+\end{choices}
+\vspace{0.2in}
+
+\vspace{1.8in}
+
+
+\question Which of the following statements are (is) true?
+\begin{choices}
+\choice $\N\times\Q$ is countable. - \textit{Right answer. $\N$ and $\Q$ are both countable and the cartesian product of two countable sets is countable.}
+\choice The set of all binary relations on a countably infinite set is countable.
+\choice $P(\Q)$ is countable.
+\choice The union of countably many countable sets can be uncountable.
+\choice The intersection of finitely many uncountable sets can be countably infinite. - \textit{Right answer. The intersection of a countably infinite set with itself will also be countably infinite.}
+\end{choices}
+
+\end{questions}
